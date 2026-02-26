@@ -4796,7 +4796,7 @@
         // 图片预加载函数：确保点击按钮时图标能秒出
         function preloadIcons() {
             const imagesToLoad = [];
-            
+
             // 收集所有图层中的图片
             ['food', 'arch', 'folk'].forEach(type => {
                 if (layerData[type]) {
@@ -4810,12 +4810,26 @@
             imagesToLoad.push('./static/sjm.png', './static/cs.png', './static/kj.png', './static/YZ_left.png', './static/YZ_right.png', './static/st.png', './static/haishangsczl.png');
             imagesToLoad.push('./static/非遗工坊/主底图.png', './static/非遗工坊/分区蒙版.png', './static/非遗工坊/纹理层.png');
 
+            // ✨ 新增：岁月长河（时间轴）插画预加载
+            imagesToLoad.push(
+                './static/story_mode/nanqian.png',
+                './static/story_mode/shibosi.png',
+                './static/story_mode/hanchaun.png',
+                './static/story_mode/1.png',
+                './static/story_mode/2.png',
+                './static/story_mode/3.png',
+                './static/story_mode/4.png',
+                './static/story_mode/Gemini_Generated_Image_h8tuj6h8tuj6h8tu.png',
+                './static/story_mode/Gemini_Generated_Image_hkcgwlhkcgwlhkcg.png',
+                './static/story_mode/Gemini_Generated_Image_uktll8uktll8uktl.png'
+            );
+
             // 执行静默加载
             imagesToLoad.forEach(src => {
                 const img = new Image();
                 img.src = src;
             });
-            console.log(`[System] 已启动 ${imagesToLoad.length} 个资源的静默预加载`);
+            console.log(`[System] 已启动 ${imagesToLoad.length} 个资源的静默预加载（含时间轴插画）`);
         }
 
         // === 旅游导览交互逻辑 (弹窗升级版) ===
