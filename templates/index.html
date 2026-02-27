@@ -762,6 +762,317 @@
             line-height: inherit;
         }
 
+        /* === 侧边栏内容样式 === */
+        #sidebar-content h3 {
+            color: #ffd700;
+            font-size: clamp(15px, 1.25vw, 19px);
+            margin: 0 0 12px 0;
+            font-weight: 600;
+        }
+
+        #sidebar-content h4 {
+            color: #e8c872;
+            font-size: clamp(14px, 1.15vw, 17px);
+            margin: 16px 0 10px 0;
+            font-weight: 500;
+        }
+
+        #sidebar-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        #sidebar-content ul li {
+            padding: 8px 12px;
+            margin: 6px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        #sidebar-content ul li:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        #sidebar-content ul li strong {
+            color: #ffd700;
+            font-size: clamp(13px, 1.05vw, 15px);
+        }
+
+        #sidebar-content .food-header-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        #sidebar-content .food-items-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        #sidebar-content .food-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            transition: background 0.2s ease;
+        }
+
+        #sidebar-content .food-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        #sidebar-content .food-item img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        #sidebar-content .food-item strong {
+            display: block;
+            color: #ffd700;
+            font-size: clamp(12px, 1vw, 14px);
+            margin-bottom: 4px;
+        }
+
+        #sidebar-content .food-item p {
+            font-size: clamp(11px, 0.9vw, 13px);
+            color: #bbb;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* 城市美食内容样式 */
+        #sidebar-content .city-food-content {
+            text-align: left;
+        }
+
+        #sidebar-content .city-food-content h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        #sidebar-content .city-intro {
+            font-size: clamp(13px, 1.05vw, 16px);
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #ffd700;
+        }
+
+        #sidebar-content .city-food-items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #sidebar-content .city-food-item {
+            display: flex;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 12px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        #sidebar-content .city-food-item::after {
+            content: '→';
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ffd700;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        #sidebar-content .city-food-item:hover::after {
+            opacity: 1;
+        }
+
+        #sidebar-content .city-food-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        #sidebar-content .city-food-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        #sidebar-content .city-food-item-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #sidebar-content .city-food-item-info strong {
+            display: block;
+            color: #ffd700;
+            font-size: clamp(14px, 1.15vw, 17px);
+            margin-bottom: 6px;
+        }
+
+        #sidebar-content .city-food-item-info p {
+            font-size: clamp(12px, 1vw, 14px);
+            color: #bbb;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            #sidebar-content .food-items-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #sidebar-content .city-food-item {
+                flex-direction: column;
+            }
+
+            #sidebar-content .city-food-item img {
+                width: 100%;
+                height: 150px;
+            }
+
+            #sidebar-content .city-default-content h3 {
+                font-size: 18px;
+            }
+
+            #sidebar-content .city-section h4 {
+                font-size: 15px;
+            }
+
+            #sidebar-content .city-section p,
+            #sidebar-content .city-section ul li {
+                font-size: 13px;
+            }
+        }
+
+        /* === 地市默认内容样式 === */
+        .city-default-content {
+            text-align: left;
+        }
+
+        .city-default-content h3 {
+            color: #ffd700;
+            font-size: clamp(18px, 1.5vw, 22px);
+            margin: 0 0 16px 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .city-default-content > p {
+            font-size: clamp(13px, 1.05vw, 15px);
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 16px;
+        }
+
+        .city-section {
+            margin-bottom: 20px;
+        }
+
+        .city-section h4 {
+            color: #e8c872;
+            font-size: clamp(15px, 1.2vw, 17px);
+            margin: 0 0 10px 0;
+            font-weight: 500;
+        }
+
+        .city-section p {
+            font-size: clamp(13px, 1.05vw, 15px);
+            line-height: 1.7;
+            color: #ddd;
+            margin-bottom: 8px;
+        }
+
+        .city-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .city-section ul li {
+            padding: 8px 0;
+            color: #ccc;
+            font-size: clamp(12px, 1vw, 14px);
+            line-height: 1.6;
+        }
+
+        .city-section ul li strong {
+            color: #ffe2ad;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* === 默认侧边栏内容样式 === */
+        .zone-default-content h3 {
+            color: #ffd700;
+            font-size: clamp(18px, 1.5vw, 22px);
+            margin: 0 0 16px 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .zone-section {
+            margin-bottom: 20px;
+        }
+
+        .zone-section h4 {
+            color: #e8c872;
+            font-size: clamp(15px, 1.2vw, 17px);
+            margin: 0 0 10px 0;
+            font-weight: 500;
+        }
+
+        .zone-section p {
+            font-size: clamp(13px, 1.05vw, 15px);
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 10px;
+        }
+
+        .zone-section strong {
+            color: #ffe2ad;
+            font-weight: 500;
+        }
+
+        .zone-explore-hint {
+            margin-top: 24px;
+            padding: 14px 16px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(232, 200, 114, 0.08) 100%);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .zone-explore-hint p {
+            margin: 0;
+            font-size: clamp(13px, 1.05vw, 15px);
+            color: #ffe2ad;
+            line-height: 1.6;
+        }
+
         /* 状态C: 聚焦模式 - 未激活区域 (视觉遮罩) */
         body.mode-focus .zone-chart:not(.active) {
             opacity: 0.15; /* 变透明，透出底下的黑色遮罩 */
@@ -1229,17 +1540,80 @@
         /* 聚焦模式下隐藏此按钮，防止重叠 */
         body.mode-focus #tour-guide-btn { display: none; }
 
-        /* === 非遗工坊入口按钮（位于导览按钮下方） === */
+        /* === 非遗工坊入口按钮（位于右下角） === */
         #craft-workshop-btn {
-            position: fixed; top: clamp(72px, 10vh, 96px); right: clamp(12px, 2.5vw, 40px); z-index: 1000;
-            padding: clamp(7px, 0.8vw, 9px) clamp(14px, 1.3vw, 18px);
-            background: rgba(253, 251, 247, 0.9);
-            border: 2px solid #8b4513; border-radius: 8px;
-            color: #5d4037; font-family: "KaiTi"; font-size: clamp(14px, 1.1vw, 17px); font-weight: bold;
-            cursor: pointer; transition: all 0.3s;
+            position: fixed; right: clamp(20px, 3vw, 40px); bottom: clamp(40px, 5vh, 70px); z-index: 1000;
+            width: clamp(112px, 14.667vw, 188px);
+            height: auto;
+            border: none;
+            padding: 0;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.28s ease, filter 0.28s ease;
+        }
+        #craft-workshop-btn img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: inherit;
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.2));
+            transition: filter 0.28s ease;
+            animation: breatheGlow 2.5s ease-in-out infinite;
+        }
+        #craft-workshop-btn::before {
+            content: '';
+            position: absolute;
+            inset: -8%;
+            border-radius: inherit;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 240, 180, 0.55) 0%, rgba(255, 240, 180, 0) 72%);
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.28s ease, transform 0.28s ease;
+            pointer-events: none;
         }
         #craft-workshop-btn:hover {
-            background: #8b4513; color: #fff; transform: scale(1.05);
+            transform: translateY(-2px) scale(1.03);
+            filter: saturate(1.08);
+            animation-play-state: paused;
+        }
+        #craft-workshop-btn:hover::before {
+            opacity: 1;
+            transform: scale(1.04);
+        }
+        #craft-workshop-btn::after {
+            content: '非遗工坊';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            padding: 6px 12px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95), rgba(101, 67, 33, 0.95));
+            color: #fff;
+            font-family: "KaiTi", "STKaiti", serif;
+            font-size: clamp(13px, 1vw, 16px);
+            font-weight: bold;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.28s ease, transform 0.28s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+        #craft-workshop-btn:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(12px);
+        }
+        #craft-workshop-btn:hover img {
+            filter: drop-shadow(0 0 14px rgba(255, 214, 120, 0.7)) drop-shadow(0 0 24px rgba(255, 214, 120, 0.4));
+            animation-play-state: paused;
+        }
+        #craft-workshop-btn:active {
+            transform: translateY(0) scale(0.98);
         }
         body.mode-focus #craft-workshop-btn { display: none; }
         body.guide-mode #craft-workshop-btn {
@@ -1248,17 +1622,80 @@
             filter: grayscale(0.8) brightness(0.6);
         }
 
-        /* === 岁月长河入口按钮（位于工坊按钮下方） === */
+        /* === 岁月长河入口按钮（位于左下角，与非遗工坊对称） === */
         #timeline-btn {
-            position: fixed; top: clamp(120px, 16vh, 152px); right: clamp(12px, 2.5vw, 40px); z-index: 1000;
-            padding: clamp(7px, 0.8vw, 9px) clamp(14px, 1.3vw, 18px);
-            background: rgba(253, 251, 247, 0.9);
-            border: 2px solid #8b4513; border-radius: 8px;
-            color: #5d4037; font-family: "KaiTi"; font-size: clamp(14px, 1.1vw, 17px); font-weight: bold;
-            cursor: pointer; transition: all 0.3s;
+            position: fixed; left: clamp(20px, 3vw, 40px); bottom: clamp(40px, 5vh, 70px); z-index: 1000;
+            width: clamp(112px, 14.667vw, 188px);
+            height: auto;
+            border: none;
+            padding: 0;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.28s ease, filter 0.28s ease;
+        }
+        #timeline-btn img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: inherit;
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+            filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.2));
+            transition: filter 0.28s ease;
+            animation: breatheGlow 2.5s ease-in-out infinite;
+        }
+        #timeline-btn::before {
+            content: '';
+            position: absolute;
+            inset: -8%;
+            border-radius: inherit;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 240, 180, 0.55) 0%, rgba(255, 240, 180, 0) 72%);
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.28s ease, transform 0.28s ease;
+            pointer-events: none;
         }
         #timeline-btn:hover {
-            background: #8b4513; color: #fff; transform: scale(1.05);
+            transform: translateY(-2px) scale(1.03);
+            filter: saturate(1.08);
+            animation-play-state: paused;
+        }
+        #timeline-btn:hover::before {
+            opacity: 1;
+            transform: scale(1.04);
+        }
+        #timeline-btn::after {
+            content: '岁月长河';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            padding: 6px 12px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95), rgba(101, 67, 33, 0.95));
+            color: #fff;
+            font-family: "KaiTi", "STKaiti", serif;
+            font-size: clamp(13px, 1vw, 16px);
+            font-weight: bold;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.28s ease, transform 0.28s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+        #timeline-btn:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(12px);
+        }
+        #timeline-btn:hover img {
+            filter: drop-shadow(0 0 14px rgba(255, 214, 120, 0.7)) drop-shadow(0 0 24px rgba(255, 214, 120, 0.4));
+            animation-play-state: paused;
+        }
+        #timeline-btn:active {
+            transform: translateY(0) scale(0.98);
         }
         body.mode-focus #timeline-btn { display: none; }
         body.guide-mode #timeline-btn {
@@ -1314,6 +1751,30 @@
             opacity: 1;
             transform: scale(1.04);
         }
+        #maritime-silk-road-btn::after {
+            content: '海上丝绸之路';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            padding: 6px 12px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95), rgba(101, 67, 33, 0.95));
+            color: #fff;
+            font-family: "KaiTi", "STKaiti", serif;
+            font-size: clamp(13px, 1vw, 16px);
+            font-weight: bold;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.28s ease, transform 0.28s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+        #maritime-silk-road-btn:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-12px);
+        }
         #maritime-silk-road-btn:hover img {
             filter: drop-shadow(0 0 16px rgba(255, 214, 120, 0.75)) drop-shadow(0 0 26px rgba(255, 214, 120, 0.42));
         }
@@ -1325,6 +1786,14 @@
             25% { transform: translateY(-4px) rotate(0.8deg); }
             50% { transform: translateY(-2px) rotate(-0.4deg); }
             75% { transform: translateY(-5px) rotate(1deg); }
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        @keyframes breatheGlow {
+            0%, 100% { filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.2)); }
+            50% { filter: drop-shadow(0 0 16px rgba(255, 214, 120, 0.6)) drop-shadow(0 0 26px rgba(255, 214, 120, 0.3)); }
         }
         body.mode-focus #maritime-silk-road-btn { display: none; }
         body.guide-mode #maritime-silk-road-btn {
@@ -1474,6 +1943,201 @@
         @keyframes timelineHintPulse {
             0%, 100% { transform: translateY(0); opacity: 0.7; }
             50% { transform: translateY(2px); opacity: 1; }
+        }
+
+        /* === 美食详情悬浮窗 === */
+        #food-detail-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 22000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: foodDetailFadeIn 0.3s ease forwards;
+        }
+
+        #food-detail-modal.hidden {
+            display: none;
+        }
+
+        @keyframes foodDetailFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .food-detail-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .food-detail-dialog {
+            position: relative;
+            width: min(900px, calc(100vw - 40px));
+            max-height: 85vh;
+            background: rgba(24, 18, 14, 0.92);
+            border: 1px solid rgba(242, 225, 198, 0.45);
+            border-radius: 16px;
+            padding: 0;
+            color: #f6ead7;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            overflow: hidden;
+            animation: foodDetailSlideIn 0.35s ease forwards;
+        }
+
+        @keyframes foodDetailSlideIn {
+            from {
+                transform: scale(0.92) translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .food-detail-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 24px;
+            line-height: 1;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .food-detail-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .food-detail-content {
+            display: flex;
+            flex-direction: column;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        #food-detail-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .food-detail-info {
+            padding: 24px 28px 28px;
+        }
+
+        #food-detail-title {
+            margin: 0 0 8px 0;
+            font-family: "KaiTi", "STKaiti", serif;
+            font-size: clamp(24px, 3vw, 32px);
+            color: #ffe2ad;
+            letter-spacing: 1px;
+        }
+
+        .food-detail-subtitle {
+            font-size: clamp(14px, 1.2vw, 16px);
+            color: #e8c872;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #food-detail-description {
+            font-size: clamp(14px, 1.15vw, 16px);
+            line-height: 1.9;
+            color: #ddd;
+            text-align: justify;
+        }
+
+        #food-detail-description p {
+            margin-bottom: 12px;
+        }
+
+        #food-detail-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* === 美食详情悬浮窗 - 自定义滚动条样式 === */
+        .food-detail-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .food-detail-content::-webkit-scrollbar-track {
+            background: rgba(242, 225, 198, 0.08);
+            border-radius: 4px;
+            margin: 4px;
+        }
+
+        .food-detail-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, rgba(232, 200, 114, 0.6) 0%, rgba(183, 86, 35, 0.6) 100%);
+            border-radius: 4px;
+            border: 1px solid rgba(242, 225, 198, 0.2);
+        }
+
+        .food-detail-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, rgba(232, 200, 114, 0.8) 0%, rgba(183, 86, 35, 0.8) 100%);
+        }
+
+        /* Firefox 滚动条样式 */
+        .food-detail-content {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(183, 86, 35, 0.6) rgba(242, 225, 198, 0.08);
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .food-detail-dialog {
+                width: calc(100vw - 20px);
+                max-height: 90vh;
+            }
+
+            #food-detail-image {
+                height: 160px;
+            }
+
+            .food-detail-info {
+                padding: 20px;
+            }
+
+            #food-detail-title {
+                font-size: 22px;
+            }
+
+            .food-detail-subtitle {
+                font-size: 14px;
+            }
+
+            #food-detail-description {
+                font-size: 14px;
+                line-height: 1.7;
+            }
         }
 
         @media (hover: none) and (pointer: coarse) and (max-width: 980px) {
@@ -1672,32 +2336,71 @@
         .craft-panel {
             width: min(1100px, 92vw);
             height: min(760px, 88vh);
-            background: #fdfbf7;
-            border: 2px solid #8b4513;
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            background: linear-gradient(145deg, #fffaf5 0%, #fdfbf7 50%, #f9f3ee 100%);
+            border: 2px solid transparent;
+            border-radius: 16px;
+            box-shadow:
+                0 25px 60px rgba(139, 69, 19, 0.25),
+                0 10px 25px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
             display: flex;
             flex-direction: column;
             position: relative;
             overflow: hidden;
         }
+        .craft-panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(135deg, #c9a66b 0%, #8b4513 25%, #a67c52 50%, #8b4513 75%, #c9a66b 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0.6;
+        }
         .craft-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 16px;
-            background: #8b4513;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #a0522d 0%, #8b4513 40%, #6b3410 100%);
             color: #fff;
             font-family: "KaiTi";
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .craft-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,215,0,0.4) 50%, transparent 100%);
         }
         .craft-close-btn {
             border: none;
-            background: transparent;
+            background: rgba(255,255,255,0.15);
             color: #fff;
             font-size: 28px;
             cursor: pointer;
             line-height: 1;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .craft-close-btn:hover {
+            background: rgba(255,255,255,0.25);
+            transform: rotate(90deg) scale(1.1);
         }
         .craft-content {
             display: grid;
@@ -1718,8 +2421,12 @@
         .craft-hub-intro {
             margin: 0;
             color: #6b4f42;
-            font-size: 14px;
-            line-height: 1.7;
+            font-size: 15px;
+            line-height: 1.8;
+            padding: 14px 18px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.6) 0%, rgba(139, 69, 19, 0.03) 100%);
+            border-radius: 12px;
+            border-left: 3px solid #c9a66b;
         }
         .craft-entry-grid {
             display: grid;
@@ -1728,22 +2435,62 @@
         }
         .craft-entry-card {
             text-align: left;
-            border: 1px solid #d7c2a6;
-            border-radius: 10px;
-            background: #fffaf4;
-            padding: 12px;
+            border: 1px solid rgba(199, 166, 107, 0.4);
+            border-radius: 14px;
+            background: linear-gradient(145deg, #ffffff 0%, #fffaf4 50%, #fff5eb 100%);
+            padding: 16px 18px;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 4px 12px rgba(139, 69, 19, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        .craft-entry-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a66b 0%, #8b4513 50%, #c9a66b 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         .craft-entry-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow:
+                0 12px 28px rgba(139, 69, 19, 0.18),
+                0 4px 12px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border-color: rgba(201, 166, 107, 0.8);
+        }
+        .craft-entry-card:hover::before {
+            opacity: 1;
         }
         .craft-entry-title {
-            margin: 0 0 8px 0;
+            margin: 0 0 10px 0;
             color: #5d4037;
             font-family: "KaiTi";
-            font-size: 22px;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+            position: relative;
+            display: inline-block;
+        }
+        .craft-entry-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #c9a66b, #8b4513);
+            transition: width 0.3s ease;
+        }
+        .craft-entry-card:hover .craft-entry-title::after {
+            width: 100%;
         }
         .craft-entry-desc {
             margin: 0;
@@ -1761,14 +2508,28 @@
         .craft-intro h4 {
             margin: 0;
             color: #5d4037;
-            font-size: 26px;
+            font-size: 28px;
             font-family: "KaiTi";
+            font-weight: bold;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .craft-intro h4::before {
+            content: '◆';
+            color: #c9a66b;
+            font-size: 20px;
         }
         .craft-intro p {
             margin: 0;
             color: #6b4f42;
-            line-height: 1.8;
-            font-size: 15px;
+            line-height: 1.9;
+            font-size: 16px;
+            padding: 14px 18px;
+            background: rgba(139, 69, 19, 0.04);
+            border-radius: 10px;
+            border-left: 3px solid #c9a66b;
         }
         .craft-intro-actions {
             margin-top: auto;
@@ -1778,14 +2539,29 @@
         }
         .craft-intro-actions button {
             border: none;
-            border-radius: 8px;
-            padding: 10px 18px;
+            border-radius: 10px;
+            padding: 12px 22px;
             cursor: pointer;
             font-family: "KaiTi";
             font-size: 16px;
+            font-weight: bold;
+            transition: all 0.25s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
         }
-        .craft-intro-back { background: #e0d6c8; color: #4f3a30; }
-        .craft-intro-enter { background: #8b4513; color: #fff; }
+        .craft-intro-actions button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+        }
+        .craft-intro-back {
+            background: linear-gradient(145deg, #f0e6d8 0%, #e0d6c8 50%, #d0c6b8 100%);
+            color: #4f3a30;
+            border: 1px solid rgba(139, 69, 19, 0.15);
+        }
+        .craft-intro-enter {
+            background: linear-gradient(145deg, #a0522d 0%, #8b4513 50%, #6b3410 100%);
+            color: #fff;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
         #craft-hub-view.hidden,
         #craft-play-view.hidden,
         #craft-canvas.hidden,
@@ -1806,26 +2582,54 @@
         #craft-floating-guide.hidden { display: none; }
         .craft-guide-box {
             width: min(560px, 86vw);
-            background: #fffaf4;
-            border: 1px solid #d8c4a7;
-            border-radius: 12px;
-            box-shadow: 0 14px 32px rgba(0,0,0,0.22);
-            padding: 16px;
+            background: linear-gradient(145deg, #ffffff 0%, #fffaf4 50%, #fff5eb 100%);
+            border: 1px solid rgba(199, 166, 107, 0.5);
+            border-radius: 16px;
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.25),
+                0 8px 20px rgba(139, 69, 19, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            padding: 24px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        .craft-guide-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #c9a66b 0%, #8b4513 50%, #c9a66b 100%);
         }
         .craft-guide-box h4 {
             margin: 0;
             color: #5d4037;
-            font-size: 24px;
+            font-size: 26px;
             font-family: "KaiTi";
+            font-weight: bold;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .craft-guide-box h4::before {
+            content: '◆';
+            color: #c9a66b;
+            font-size: 18px;
         }
         .craft-guide-box p {
             margin: 0;
             color: #6b4f42;
-            font-size: 15px;
-            line-height: 1.8;
+            font-size: 16px;
+            line-height: 1.9;
+            padding: 12px 16px;
+            background: rgba(139, 69, 19, 0.04);
+            border-radius: 10px;
+            border-left: 3px solid #c9a66b;
         }
         .craft-guide-actions {
             display: flex;
@@ -1835,22 +2639,40 @@
         }
         .craft-guide-actions button {
             border: none;
-            border-radius: 8px;
-            padding: 8px 16px;
+            border-radius: 10px;
+            padding: 10px 20px;
             cursor: pointer;
             font-family: "KaiTi";
             font-size: 16px;
+            font-weight: bold;
+            transition: all 0.25s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
         }
-        .craft-guide-skip { background: #e0d6c8; color: #4f3a30; }
-        .craft-guide-next { background: #8b4513; color: #fff; }
+        .craft-guide-actions button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+        }
+        .craft-guide-skip {
+            background: linear-gradient(145deg, #f0e6d8 0%, #e0d6c8 50%, #d0c6b8 100%);
+            color: #4f3a30;
+            border: 1px solid rgba(139, 69, 19, 0.15);
+        }
+        .craft-guide-next {
+            background: linear-gradient(145deg, #a0522d 0%, #8b4513 50%, #6b3410 100%);
+            color: #fff;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
         .craft-canvas-wrap {
-            background: rgba(139, 69, 19, 0.04);
-            border: 1px solid #dfcfb8;
-            border-radius: 10px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.8) 0%, rgba(139, 69, 19, 0.04) 100%);
+            border: 1px solid rgba(199, 166, 107, 0.35);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            box-shadow:
+                inset 0 2px 8px rgba(139, 69, 19, 0.06),
+                0 2px 8px rgba(0, 0, 0, 0.04);
         }
         #craft-canvas {
             width: 100%;
@@ -1880,30 +2702,45 @@
             gap: 8px;
         }
         .craft-back-btn {
-            border: 1px solid rgba(255,255,255,0.6);
-            background: transparent;
+            border: 1px solid rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.1);
             color: #fff;
-            border-radius: 6px;
-            padding: 3px 10px;
+            border-radius: 8px;
+            padding: 5px 14px;
             cursor: pointer;
             font-family: "KaiTi";
             font-size: 14px;
+            font-weight: bold;
+            transition: all 0.25s ease;
+        }
+        .craft-back-btn:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.8);
+            transform: translateX(-2px);
         }
         .craft-back-btn.hidden { display: none; }
         .craft-tools {
-            border: 1px solid #eadcc8;
-            border-radius: 10px;
-            padding: 14px;
+            border: 1px solid rgba(199, 166, 107, 0.35);
+            border-radius: 14px;
+            padding: 18px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
             overflow: auto;
+            background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,250,244,0.5) 100%);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.9),
+                0 2px 8px rgba(139, 69, 19, 0.06);
         }
         .craft-tools h4 {
             margin: 0;
             color: #5d4037;
             font-family: "KaiTi";
-            font-size: 21px;
+            font-size: 22px;
+            font-weight: bold;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+            padding-bottom: 8px;
+            border-bottom: 1px dashed rgba(199, 166, 107, 0.4);
         }
         .craft-tip {
             margin: 0;
@@ -1914,17 +2751,41 @@
         .craft-palette {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 12px;
         }
         .craft-color {
-            height: 36px;
+            height: 42px;
             border: 2px solid transparent;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s;
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            box-shadow:
+                0 2px 6px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
-        .craft-color:hover { transform: translateY(-2px); }
-        .craft-color.active { border-color: #8b4513; }
+        .craft-color::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border-radius: 7px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .craft-color:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow:
+                0 6px 16px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+        .craft-color.active {
+            border-color: #8b4513;
+            transform: scale(1.08);
+            box-shadow:
+                0 0 0 3px rgba(139, 69, 19, 0.2),
+                0 4px 12px rgba(139, 69, 19, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
         .craft-actions {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1932,30 +2793,163 @@
         }
         .craft-actions button {
             border: none;
-            border-radius: 8px;
-            padding: 10px 0;
+            border-radius: 10px;
+            padding: 12px 0;
             cursor: pointer;
             font-family: "KaiTi";
             font-size: 16px;
-            transition: opacity 0.2s;
+            font-weight: bold;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
         }
-        .craft-actions button:hover { opacity: 0.9; }
-        .craft-reset-btn { background: #e0d6c8; color: #4f3a30; }
-        .craft-finish-btn { background: #8b4513; color: #fff; }
+        .craft-actions button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+            transition: left 0.5s ease;
+        }
+        .craft-actions button:hover::before {
+            left: 100%;
+        }
+        .craft-actions button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+        }
+        .craft-actions button:active {
+            transform: translateY(0);
+        }
+        .craft-reset-btn {
+            background: linear-gradient(145deg, #f0e6d8 0%, #e0d6c8 50%, #d0c6b8 100%);
+            color: #4f3a30;
+            border: 1px solid rgba(139, 69, 19, 0.15);
+        }
+        .craft-finish-btn {
+            background: linear-gradient(145deg, #a0522d 0%, #8b4513 50%, #6b3410 100%);
+            color: #fff;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
         .craft-view-btn {
-            border: 1px solid #cfbea6;
-            background: #f5efe7;
+            border: 1px solid rgba(199, 166, 107, 0.5);
+            background: linear-gradient(145deg, #faf7f1 0%, #f5efe7 50%, #f0e7dd 100%);
             color: #5d4037;
-            border-radius: 8px;
-            padding: 8px 0;
+            border-radius: 10px;
+            padding: 10px 0;
             font-family: "KaiTi";
             font-size: 15px;
+            font-weight: bold;
             cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+        }
+        .craft-view-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+            border-color: rgba(201, 166, 107, 0.8);
+        }
+
+        /* === 醒狮上色按钮组（三列统一布局） === */
+        .craft-actions-main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .craft-action-btn {
+            border: none;
+            border-radius: 10px;
+            padding: 14px 12px;
+            cursor: pointer;
+            font-family: "KaiTi";
+            font-size: 15px;
+            font-weight: bold;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            min-height: 60px;
+            justify-content: center;
+        }
+        .craft-action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+            transition: left 0.5s ease;
+        }
+        .craft-action-btn:hover::before {
+            left: 100%;
+        }
+        .craft-action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+        }
+        .craft-action-btn:active {
+            transform: translateY(0);
+        }
+        .craft-action-btn .btn-icon {
+            font-size: 20px;
+            line-height: 1;
+            opacity: 0.85;
+        }
+        .craft-action-btn .btn-text {
+            font-size: 14px;
+            line-height: 1.2;
+            text-align: center;
+        }
+        /* 重置配色按钮样式 */
+        .craft-actions-main .craft-reset-btn {
+            background: linear-gradient(145deg, #f0e6d8 0%, #e0d6c8 50%, #d0c6b8 100%);
+            color: #4f3a30;
+            border: 1px solid rgba(139, 69, 19, 0.2);
+        }
+        .craft-actions-main .craft-reset-btn:hover {
+            background: linear-gradient(145deg, #f8edd8 0%, #f0e6d8 50%, #e0d6c8 100%);
+            border-color: rgba(139, 69, 19, 0.35);
+        }
+        /* 完成作品按钮样式 */
+        .craft-actions-main .craft-finish-btn {
+            background: linear-gradient(145deg, #a0522d 0%, #8b4513 50%, #6b3410 100%);
+            color: #fff;
+            border: 1px solid rgba(255, 215, 0, 0.25);
+        }
+        .craft-actions-main .craft-finish-btn:hover {
+            background: linear-gradient(145deg, #b8623d 0%, #9d5628 50%, #7a4418 100%);
+        }
+        /* 重置视图按钮样式（与其他按钮统一） */
+        .craft-actions-main .craft-view-btn {
+            border: 1px solid rgba(199, 166, 107, 0.5);
+            background: linear-gradient(145deg, #faf7f1 0%, #f5efe7 50%, #f0e7dd 100%);
+            color: #5d4037;
+            border-radius: 10px;
+            padding: 14px 12px;
+            font-family: "KaiTi";
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+        .craft-actions-main .craft-view-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+            border-color: rgba(201, 166, 107, 0.8);
+            background: linear-gradient(145deg, #ffffff 0%, #faf7f1 50%, #f5efe7 100%);
         }
         #craft-result {
             display: none;
-            border-top: 1px dashed #d7c2a6;
-            padding-top: 10px;
+            border-top: 1px dashed rgba(199, 166, 107, 0.5);
+            padding-top: 12px;
+            margin-top: 8px;
         }
         #craft-result.show { display: block; }
         #craft-result p {
@@ -1965,6 +2959,389 @@
             line-height: 1.6;
         }
 
+        /* === 非遗工坊移动端优化 === */
+        @media (max-width: 768px) {
+            /* 弹窗面板整体调整 */
+            .craft-panel {
+                width: 95vw;
+                height: 92vh;
+                max-height: none;
+                border-radius: 12px;
+            }
+
+            /* 标题栏优化 */
+            .craft-header {
+                padding: 6px 12px !important;
+                min-height: 40px !important;
+                box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1) !important;
+            }
+            .craft-header::after {
+                display: none !important;
+            }
+            .craft-header-left {
+                gap: 4px !important;
+            }
+            #craft-header-title {
+                font-size: 14px !important;
+                letter-spacing: 0.5px !important;
+            }
+            .craft-back-btn {
+                padding: 3px 8px !important;
+                font-size: 12px !important;
+            }
+            .craft-close-btn {
+                width: 28px !important;
+                height: 28px !important;
+                font-size: 20px !important;
+                padding: 0 !important;
+            }
+
+            /* 内容区域改为上下布局 */
+            .craft-content {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px;
+                overflow-y: auto;
+            }
+
+            /* 画布区域 */
+            .craft-canvas-wrap {
+                flex: 0 0 auto;
+                max-height: 45vh;
+                min-height: 300px;
+            }
+            #craft-canvas {
+                max-height: 45vh;
+            }
+
+            /* 工具区域 */
+            .craft-tools {
+                flex: 0 0 auto;
+                padding: 12px;
+                gap: 10px;
+            }
+            .craft-tools h4 {
+                font-size: 18px;
+                padding-bottom: 6px;
+            }
+            .craft-tip {
+                font-size: 13px;
+                padding: 10px 12px;
+            }
+
+            /* 配色台 - 减小颜色按钮 */
+            .craft-palette {
+                grid-template-columns: repeat(6, 1fr);
+                gap: 8px;
+            }
+            .craft-color {
+                height: 36px;
+                border-radius: 8px;
+            }
+
+            /* 按钮组优化 */
+            .craft-actions-main {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                margin-top: 6px;
+            }
+            .craft-action-btn {
+                padding: 10px 8px;
+                min-height: 52px;
+                border-radius: 8px;
+            }
+            .craft-action-btn .btn-icon {
+                font-size: 18px;
+            }
+            .craft-action-btn .btn-text {
+                font-size: 13px;
+            }
+
+            /* 入口选择界面 */
+            .craft-hub {
+                padding: 14px;
+                gap: 12px;
+            }
+            .craft-hub-intro {
+                font-size: 13px;
+                padding: 12px 14px;
+            }
+            .craft-entry-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .craft-entry-card {
+                padding: 14px;
+            }
+            .craft-entry-title {
+                font-size: 20px;
+            }
+            .craft-entry-desc {
+                font-size: 13px;
+            }
+
+            /* 讲解弹窗优化 */
+            .craft-guide-box {
+                width: 92vw;
+                padding: 18px;
+                gap: 12px;
+            }
+            .craft-guide-box h4 {
+                font-size: 20px;
+            }
+            .craft-guide-box p {
+                font-size: 14px;
+                padding: 10px 14px;
+                line-height: 1.7;
+            }
+            .craft-guide-actions {
+                gap: 8px;
+            }
+            .craft-guide-actions button {
+                padding: 8px 16px;
+                font-size: 15px;
+            }
+
+            /* 作品集优化 */
+            #craft-gallery {
+                width: 160px;
+                right: 12px;
+                bottom: 12px;
+                padding: 8px;
+            }
+            #craft-gallery-title {
+                font-size: 13px;
+            }
+            #craft-gallery-list {
+                max-height: 100px;
+                gap: 4px;
+            }
+            .craft-thumb-delete {
+                width: 16px;
+                height: 16px;
+                top: -5px;
+                right: -5px;
+                font-size: 10px;
+            }
+
+            /* 预览弹窗优化 */
+            .craft-preview-box {
+                width: 94vw;
+                height: 94vw;
+                max-height: 94vh;
+                max-width: 94vh;
+                padding: 8px;
+            }
+            .craft-preview-close {
+                width: 32px;
+                height: 32px;
+                top: -14px;
+                right: -14px;
+                font-size: 20px;
+            }
+
+            /* 移动端作品集默认收起，悬停时展开 */
+            #craft-gallery {
+                width: 48px;
+                padding: 5px;
+                transition: all 0.3s ease;
+            }
+            #craft-gallery-title,
+            #craft-gallery-list {
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+                overflow: hidden;
+            }
+            #craft-gallery:hover {
+                width: 160px;
+                padding: 8px;
+            }
+            #craft-gallery:hover #craft-gallery-title,
+            #craft-gallery:hover #craft-gallery-list {
+                opacity: 1;
+                visibility: visible;
+                height: auto;
+            }
+            #craft-gallery::after {
+                content: '🖼';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 20px;
+                opacity: 1;
+                transition: opacity 0.3s ease;
+            }
+            #craft-gallery:hover::after {
+                opacity: 0;
+            }
+        }
+
+        /* 超小屏幕进一步优化（手机竖屏） */
+        @media (max-width: 480px) {
+            .craft-panel {
+                width: 98vw;
+                height: 95vh;
+                border-radius: 10px;
+            }
+
+            .craft-header {
+                padding: 5px 10px !important;
+                min-height: 36px !important;
+                box-shadow: inset 0 -1px 0 rgba(0,0,0,0.08) !important;
+            }
+            .craft-header::after {
+                display: none !important;
+            }
+            #craft-header-title {
+                font-size: 13px !important;
+                letter-spacing: 0.3px !important;
+            }
+            .craft-back-btn {
+                padding: 2px 6px !important;
+                font-size: 11px !important;
+            }
+            .craft-close-btn {
+                width: 26px !important;
+                height: 26px !important;
+                font-size: 18px !important;
+            }
+
+            .craft-content {
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .craft-canvas-wrap {
+                min-height: 250px;
+                max-height: 42vh;
+            }
+
+            .craft-tools {
+                padding: 10px;
+                gap: 8px;
+            }
+
+            .craft-tools h4 {
+                font-size: 16px;
+            }
+
+            .craft-tip {
+                font-size: 12px;
+                padding: 8px 10px;
+                line-height: 1.5;
+            }
+
+            /* 配色台 - 更多列 */
+            .craft-palette {
+                grid-template-columns: repeat(6, 1fr);
+                gap: 6px;
+            }
+            .craft-color {
+                height: 32px;
+                border-radius: 6px;
+            }
+
+            /* 按钮组 */
+            .craft-actions-main {
+                gap: 6px;
+                margin-top: 4px;
+            }
+            .craft-action-btn {
+                padding: 8px 6px;
+                min-height: 48px;
+                border-radius: 8px;
+                gap: 4px;
+            }
+            .craft-action-btn .btn-icon {
+                font-size: 16px;
+            }
+            .craft-action-btn .btn-text {
+                font-size: 12px;
+            }
+
+            /* 入口卡片 */
+            .craft-entry-card {
+                padding: 12px;
+            }
+            .craft-entry-title {
+                font-size: 18px;
+                margin-bottom: 6px;
+            }
+            .craft-entry-desc {
+                font-size: 12px;
+            }
+
+            /* 讲解弹窗 */
+            .craft-guide-box {
+                padding: 14px;
+            }
+            .craft-guide-box h4 {
+                font-size: 18px;
+            }
+            .craft-guide-box p {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+
+            /* 作品集 */
+            #craft-gallery {
+                width: 140px;
+                right: 8px;
+                bottom: 8px;
+                padding: 6px;
+            }
+            #craft-gallery-title {
+                font-size: 12px;
+                margin-bottom: 4px;
+            }
+            #craft-gallery-list {
+                max-height: 80px;
+                gap: 3px;
+            }
+
+            /* 移动端作品集默认收起，悬停时展开 */
+            #craft-gallery {
+                width: 44px;
+                padding: 4px;
+                transition: all 0.3s ease;
+            }
+            #craft-gallery-title,
+            #craft-gallery-list {
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+                overflow: hidden;
+            }
+            #craft-gallery:hover {
+                width: 140px;
+                padding: 6px;
+            }
+            #craft-gallery:hover #craft-gallery-title,
+            #craft-gallery:hover #craft-gallery-list {
+                opacity: 1;
+                visibility: visible;
+                height: auto;
+            }
+            #craft-gallery::after {
+                content: '🖼';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 18px;
+                opacity: 1;
+                transition: opacity 0.3s ease;
+            }
+            #craft-gallery:hover::after {
+                opacity: 0;
+            }
+        }
+
+        /* === 工坊作品缩略图区（右下角） === */
+
         /* === 工坊作品缩略图区（右下角） === */
         #craft-gallery {
             position: fixed;
@@ -1972,19 +3349,36 @@
             bottom: 22px;
             z-index: 21500;
             width: 200px;
-            background: rgba(253, 251, 247, 0.95);
-            border: 1px solid rgba(139, 69, 19, 0.45);
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-            padding: 8px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(253,251,247,0.95) 100%);
+            border: 1px solid rgba(199, 166, 107, 0.5);
+            border-radius: 14px;
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.2),
+                0 4px 12px rgba(139, 69, 19, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            padding: 12px;
+            backdrop-filter: blur(10px);
+        }
+        #craft-gallery::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a66b 0%, #8b4513 50%, #c9a66b 100%);
+            border-radius: 14px 14px 0 0;
         }
         #craft-gallery.hidden { display: none; }
         #craft-gallery-title {
             font-family: "KaiTi";
             color: #5d4037;
-            font-size: 14px;
-            margin: 0 0 6px 0;
+            font-size: 15px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
             text-align: center;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+            letter-spacing: 1px;
         }
         #craft-gallery-list {
             display: grid;
@@ -1994,13 +3388,21 @@
             overflow-y: auto;
         }
         .craft-thumb-btn {
-            border: 1px solid #d9c8af;
-            border-radius: 6px;
+            border: 1px solid rgba(199, 166, 107, 0.4);
+            border-radius: 8px;
             background: #fff;
             padding: 0;
             cursor: pointer;
             overflow: hidden;
             aspect-ratio: 1 / 1;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .craft-thumb-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+            border-color: rgba(201, 166, 107, 0.8);
+            z-index: 10;
         }
         .craft-thumb-item {
             position: relative;
@@ -2009,17 +3411,23 @@
             position: absolute;
             top: -6px;
             right: -6px;
-            width: 18px;
-            height: 18px;
-            border: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #fff;
             border-radius: 50%;
-            background: #8b4513;
+            background: linear-gradient(145deg, #a0522d 0%, #8b4513 100%);
             color: #fff;
             font-size: 12px;
-            line-height: 18px;
+            line-height: 16px;
             cursor: pointer;
             padding: 0;
             z-index: 2;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        }
+        .craft-thumb-delete:hover {
+            transform: scale(1.15);
+            background: linear-gradient(145deg, #c13f2b 0%, #962b23 100%);
         }
         .craft-thumb-btn img {
             width: 100%;
@@ -2046,11 +3454,26 @@
             position: relative;
             width: min(86vw, 900px);
             height: min(86vh, 900px);
-            background: #fdfbf7;
-            border: 2px solid #8b4513;
-            border-radius: 10px;
-            padding: 10px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+            background: linear-gradient(145deg, #fffaf5 0%, #fdfbf7 50%, #f9f3ee 100%);
+            border: 2px solid transparent;
+            border-radius: 14px;
+            padding: 12px;
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.4),
+                0 10px 25px rgba(139, 69, 19, 0.2);
+        }
+        .craft-preview-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 14px;
+            padding: 2px;
+            background: linear-gradient(135deg, #c9a66b 0%, #8b4513 25%, #a67c52 50%, #8b4513 75%, #c9a66b 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0.5;
         }
         #craft-preview-image {
             width: 100%;
@@ -2062,13 +3485,20 @@
         }
         .craft-preview-close {
             position: absolute;
-            top: -15px;
-            right: -15px;
-            width: 34px;
-            height: 34px;
+            top: -18px;
+            right: -18px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
-            border: none;
-            background: #8b4513;
+            border: 2px solid #fff;
+            background: linear-gradient(145deg, #a0522d 0%, #8b4513 100%);
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .craft-preview-close:hover {
+            transform: rotate(90deg) scale(1.1);
+            background: linear-gradient(145deg, #c13f2b 0%, #962b23 100%);
+        }
             color: #fff;
             font-size: 20px;
             cursor: pointer;
@@ -2397,12 +3827,12 @@
         🗺️ 导览模式
     </button>
 
-    <button id="craft-workshop-btn" onclick="openCraftWorkshop()">
-        🎨 非遗工坊
+    <button id="craft-workshop-btn" onclick="openCraftWorkshop()" aria-label="非遗工坊">
+        <img src="./static/gongfang.png" alt="非遗工坊">
     </button>
 
-    <button id="timeline-btn" onclick="toggleTimelineSystem()">
-        📜 岁月长河
+    <button id="timeline-btn" onclick="toggleTimelineSystem()" aria-label="岁月长河">
+        <img src="./static/suiyue.png" alt="岁月长河">
     </button>
 
     <button id="maritime-silk-road-btn" onclick="openMaritimeSilkRoad()" aria-label="海上丝绸之路">
@@ -2423,6 +3853,22 @@
             <h4 id="timeline-dialog-title"></h4>
             <p id="timeline-dialog-text"></p>
             <div class="timeline-page-hint">▼ 点击翻页</div>
+        </div>
+    </div>
+
+    <!-- 美食详情悬浮窗 -->
+    <div id="food-detail-modal" class="hidden">
+        <div class="food-detail-backdrop" onclick="closeFoodDetail()"></div>
+        <div class="food-detail-dialog">
+            <button class="food-detail-close" onclick="closeFoodDetail()">×</button>
+            <div class="food-detail-content">
+                <img id="food-detail-image" src="" alt="">
+                <div class="food-detail-info">
+                    <h3 id="food-detail-title"></h3>
+                    <p id="food-detail-subtitle" class="food-detail-subtitle"></p>
+                    <div id="food-detail-description" class="food-detail-description"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -2645,11 +4091,20 @@
                         <h4>配色台</h4>
                         <p class="craft-tip">先选择颜色，再点击狮头区域进行上色。建议先从狮额与眼圈开始。</p>
                         <div id="craft-palette" class="craft-palette"></div>
-                        <div class="craft-actions">
-                            <button class="craft-reset-btn" onclick="resetCraftPainting()">重置配色</button>
-                            <button class="craft-finish-btn" onclick="finishCraftPainting()">完成作品</button>
+                        <div class="craft-actions-main">
+                            <button class="craft-action-btn craft-reset-btn" onclick="resetCraftPainting()">
+                                <span class="btn-icon">↺</span>
+                                <span class="btn-text">重置配色</span>
+                            </button>
+                            <button class="craft-action-btn craft-finish-btn" onclick="finishCraftPainting()">
+                                <span class="btn-icon">✓</span>
+                                <span class="btn-text">完成作品</span>
+                            </button>
+                            <button class="craft-action-btn craft-view-btn" onclick="resetCraftView()">
+                                <span class="btn-icon">⌖</span>
+                                <span class="btn-text">重置视图</span>
+                            </button>
                         </div>
-                        <button class="craft-view-btn" onclick="resetCraftView()">重置视图（缩放/拖动）</button>
                         <div id="craft-result">
                             <p id="craft-result-text"></p>
                         </div>
@@ -3823,6 +5278,41 @@
             return cache;
         }
 
+        /**
+         * 根据地图容器的宽度和当前缩放级别动态计算字体大小
+         * @param {Object} chart - ECharts 实例
+         * @param {HTMLElement} container - 地图容器元素
+         * @returns {number} 动态计算的字体大小
+         */
+        function getDynamicFontSize(chart, container) {
+            if (!chart || !container) return 12;
+
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            // 基础字体大小：根据容器宽度计算
+            // 较小的容器使用较小的字体
+            const baseFontSize = Math.max(10, Math.min(14, width / 60));
+
+            // 获取当前 geo 组件的缩放信息
+            try {
+                const geoModel = chart.getModel().getComponent('geo');
+                if (!geoModel) return baseFontSize;
+
+                // 获取当前缩放级别，默认为 1
+                const zoom = geoModel.option.zoom || 1;
+
+                // 根据缩放级别调整字体大小
+                // 缩放越大，字体越小，避免字体相对地市太大
+                const scaledFontSize = baseFontSize / Math.pow(zoom, 0.4);
+
+                // 限制字体大小范围，避免太小或太大
+                return Math.max(7, Math.min(16, scaledFontSize));
+            } catch (e) {
+                return baseFontSize;
+            }
+        }
+
         window.toggleSidebar = function(forceState) {
             const sidebar = document.getElementById('info-sidebar');
             const floatingBtn = document.getElementById('floating-toggle');
@@ -3859,7 +5349,18 @@
 
         function updateSidebarContent(title, content) {
             document.getElementById('sidebar-title').innerText = title;
-            document.getElementById('sidebar-content').innerHTML = `<p>${content}</p>`;
+            document.getElementById('sidebar-content').innerHTML = content;
+        }
+
+        // 更新侧边栏内容（智能判断是否包含HTML标签）
+        function updateSidebarContentSmart(title, content) {
+            document.getElementById('sidebar-title').innerText = title;
+            // 如果内容包含HTML标签，直接使用；否则包裹在p标签中
+            if (/<[^>]>/.test(content)) {
+                document.getElementById('sidebar-content').innerHTML = content;
+            } else {
+                document.getElementById('sidebar-content').innerHTML = `<p>${content}</p>`;
+            }
         }
 
         // --- Custom Tooltip Logic ---
@@ -4008,9 +5509,33 @@
                  hideTooltip();
             });
 
+            // 地图缩放事件处理（带防抖）
+            let geoRoamTimer = null;
             myChart.on('georoam', function() {
                 if (activeZoneName !== name) return;
                 positionLayerPopup();
+
+                // 使用防抖机制，避免频繁更新
+                if (geoRoamTimer) clearTimeout(geoRoamTimer);
+                geoRoamTimer = setTimeout(() => {
+                    // 动态更新标签字体大小
+                    const container = document.getElementById('zone-' + name);
+                    if (container) {
+                        const newFontSize = getDynamicFontSize(myChart, container);
+                        myChart.setOption({
+                            geo: {
+                                label: {
+                                    fontSize: newFontSize
+                                },
+                                emphasis: {
+                                    label: {
+                                        fontSize: newFontSize
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }, 50); // 50ms 防抖延迟
             });
 
             // 点击地市 (聚焦逻辑)
@@ -4033,9 +5558,63 @@
 
                 if (params.name) {
                     focusedCityName = params.name;
-                    
-                    var info = cityData[params.name] || { desc: "暂无详细介绍..." };
-                    updateSidebarContent(params.name, info.desc);
+
+                    // 规范化城市名称，用于匹配 layerData
+                    const normalizedCityName = normalizeCityName(params.name);
+
+                    // 根据当前选定的类型显示对应内容
+                    if (currentLayer) {
+                        // 如果选定了美食/栖居/非遗，显示地市对应类型的内容
+                        const typeNames = { food: '寻味美食', arch: '栖居建筑', folk: '非遗风俗' };
+                        // 从layerData中查找该地市的相关数据（使用规范化后的城市名进行匹配）
+                        const items = layerData[currentLayer] ? layerData[currentLayer].filter(item => normalizeCityName(item.city) === normalizedCityName) : [];
+
+                        if (items.length > 0) {
+                            // 有具体数据，展示该地市的所有美食项目
+                            let foodItemsHtml = '';
+                            items.forEach(item => {
+                                foodItemsHtml += `
+                                    <div class="city-food-item" onclick="openFoodDetail('${item.name}')" style="cursor: pointer;">
+                                        <img src="./static/2FOOD/${item.img}" alt="${item.name}">
+                                        <div class="city-food-item-info">
+                                            <strong>${item.name}</strong>
+                                            <p>${item.desc}</p>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+
+                            // 获取该地市的描述（使用规范化后的城市名）
+                            const cityDesc = getCityFoodDescription(normalizedCityName);
+
+                            const content = `
+                                <div class="city-food-content">
+                                    <h3>${params.name}</h3>
+                                    <p class="city-intro">${cityDesc}</p>
+                                    <div class="city-food-items">
+                                        ${foodItemsHtml}
+                                    </div>
+                                </div>
+                            `;
+                            updateSidebarContent(params.name + '·' + typeNames[currentLayer], content);
+                        } else {
+                            // 无具体数据，显示占位符
+                            updateSidebarContent(
+                                params.name + '·' + typeNames[currentLayer],
+                                `<p>${params.name}的${typeNames[currentLayer]}内容正在整理中，敬请期待...</p>`
+                            );
+                        }
+                    } else {
+                        // 未选定类型，显示地市详细默认内容
+                        if (cityDefaultContent[params.name]) {
+                            const cityData_detail = cityDefaultContent[params.name];
+                            updateSidebarContent(cityData_detail.title, cityData_detail.content);
+                        } else {
+                            // 如果没有详细内容，使用原来的 cityData
+                            var info = cityData[params.name] || { desc: "暂无详细介绍..." };
+                            updateSidebarContent(params.name, info.desc);
+                        }
+                    }
 
                     if (!isSidebarOpen) {
                         window.toggleSidebar(true);
@@ -4079,8 +5658,18 @@
                         name: focusedCityName
                     });
                     focusedCityName = null;
-                    
-                    updateSidebarContent(activeZoneName + "文化", "这里是" + activeZoneName + "文化区域的详细介绍占位符...");
+
+                    // 根据当前选定的类型恢复侧边栏内容
+                    if (currentLayer && zoneContentData[currentLayer] && zoneContentData[currentLayer][activeZoneName]) {
+                        const contentData = zoneContentData[currentLayer][activeZoneName];
+                        updateSidebarContent(contentData.title, contentData.content);
+                    } else if (zoneContentData.default && zoneContentData.default[activeZoneName]) {
+                        // 显示默认侧边栏内容
+                        const contentData = zoneContentData.default[activeZoneName];
+                        updateSidebarContent(contentData.title, contentData.content);
+                    } else {
+                        updateSidebarContent(activeZoneName + "文化", "这里是" + activeZoneName + "文化区域的详细介绍占位符...");
+                    }
 
                     myChart.setOption({
                         geo: {
@@ -4104,11 +5693,21 @@
 
             // ✨ 立即静默图表
             chart.setOption({ silent: true });
-            
+
             // ✨ 启动氛围特效
             startAtmosphere(name);
 
-            updateSidebarContent(name + "文化", "这里是" + name + "文化区域的详细介绍占位符...");
+            // 根据当前选定的类型更新侧边栏内容
+            if (currentLayer && zoneContentData[currentLayer] && zoneContentData[currentLayer][name]) {
+                const contentData = zoneContentData[currentLayer][name];
+                updateSidebarContent(contentData.title, contentData.content);
+            } else if (zoneContentData.default && zoneContentData.default[name]) {
+                // 显示默认侧边栏内容
+                const contentData = zoneContentData.default[name];
+                updateSidebarContent(contentData.title, contentData.content);
+            } else {
+                updateSidebarContent(name + "文化", "这里是" + name + "文化区域的详细介绍占位符...");
+            }
             window.toggleSidebar(true);
 
             // ✨ 使用 requestAnimationFrame 代替 setInterval 以实现极致平滑的缩放
@@ -4151,29 +5750,41 @@
                     });
                 }
                 
+                // 计算初始字体大小
+                const initialFontSize = getDynamicFontSize(chart, div);
+
                 chart.setOption({
-                    silent: false, 
+                    silent: false,
                     geo: {
-                        roam: true, 
+                        roam: true,
                         selectedMode: 'single', // ✨ 动画结束后才开启选中功能
-                        label: { show: true, color: 'rgba(255,255,255,0.8)', fontSize: 12 },
-                        itemStyle: { 
-                            borderColor: 'rgba(255, 255, 255, 0.4)', 
+                        label: {
+                            show: true,
+                            color: 'rgba(255,255,255,0.8)',
+                            fontSize: initialFontSize
+                        },
+                        itemStyle: {
+                            borderColor: 'rgba(255, 255, 255, 0.4)',
                             borderWidth: 1,
                             shadowBlur: 0,
                             shadowColor: 'transparent'
                         },
                         // ✨ 统一悬停与选中的视觉语言
                         emphasis: {
-                            disabled: false, 
-                            itemStyle: { 
+                            disabled: false,
+                            itemStyle: {
                                 areaColor: colors[name], // 保持底色
-                                borderColor: highlightColor, 
+                                borderColor: highlightColor,
                                 borderWidth: 1.6,
                                 shadowBlur: 0,
                                 shadowColor: 'transparent'
                             },
-                            label: { show: true, color: '#fff', fontWeight: 'bold' }
+                            label: {
+                                show: true,
+                                color: '#fff',
+                                fontWeight: 'bold',
+                                fontSize: initialFontSize
+                            }
                         },
                         blur: { itemStyle: { opacity: 1 }, label: { show: false } }
                     }
@@ -4373,14 +5984,956 @@
 
         window.closeLayerPopup = closeLayerPopup;
 
+        // === 规范化城市名称（移除"市"后缀） ===
+        function normalizeCityName(cityName) {
+            if (!cityName) return cityName;
+            // 如果城市名以"市"结尾，移除它
+            if (cityName.endsWith('市')) {
+                return cityName.substring(0, cityName.length - 1);
+            }
+            // 如果城市名是"顺德"，映射到"佛山"（因为顺德属于佛山）
+            if (cityName === '顺德') {
+                return '佛山';
+            }
+            return cityName;
+        }
+
+        // === 获取各地市的美食描述 ===
+        function getCityFoodDescription(cityName) {
+            const descriptions = {
+                '广州': '作为广府文化的中心，广州的早茶文化闻名遐迩。"一盅两件"不仅是美食，更是一种生活方式。茶楼里熙熙攘攘，亲朋相聚，品茶尝点，闲话家常，这份悠闲与精致，正是老广人的生活哲学。',
+                '佛山': '顺德作为"世界美食之都"，粤菜发源地之一。双皮奶是顺德的招牌甜品，选用新鲜水牛奶制作，上层奶皮甘香，下层奶皮香滑润口，入口即化，奶香浓郁。',
+                '东莞': '东莞烧鹅濑粉是当地的传统名吃。烧鹅皮脆肉嫩，油脂丰腴而不腻；濑粉爽滑弹牙，吸饱了烧鹅的汤汁，每一口都是满足。这道菜体现了东莞人对食材本味的追求。',
+                '中山': '石岐乳鸽是中山的传统名菜。选用妙龄乳鸽，肉质鲜嫩，经过特殊的腌制和烤制工艺，皮脆如纸，肉嫩多汁，咬一口汁水四溢，是中山宴席上的招牌菜。',
+                '江门': '新会陈皮是江门的瑰宝，享有"千年人参，百年陈皮"的美誉。采用新会特有的茶枝柑果皮，经过三年以上的陈化，入药入膳皆为宝，是广府人养生调理的佳品。',
+                '珠海': '横琴生蚝得益于珠海得天独厚的海洋环境，肉质肥美鲜嫩，营养丰富。无论是清蒸、蒜蓉还是烧烤，都能最大程度保留生蚝的鲜美，是海洋馈赠的珍馐。',
+                '肇庆': '裹蒸粽是肇庆的传统美食，以其体硕如枕的独特造型闻名。糯米、绿豆、五花肉等馅料包裹在肇庆特有的冬叶中，蒸煮后清香扑鼻，馅料丰富，口感软糯。',
+                '云浮': '石磨肠粉是云浮的特色小吃。采用传统石磨磨制米浆，现磨现做，米浆细腻均匀。蒸出的肠粉薄如蝉翼，洁白晶莹，口感爽滑，米香浓郁。',
+                '湛江': '白切鸡是湛江菜的代表，体现了广府菜"清、鲜、嫩、滑"的特点。选用优质三黄鸡，经过独特的烹饪工艺，皮爽肉滑，原汁原味，鸡味浓郁，蘸上沙姜酱油更是绝配。',
+                '茂名': '茂名荔枝享誉世界，"一骑红尘妃子笑，无人知是荔枝来"说的正是茂名荔枝。其中妃子笑品种最为著名，果实硕大，果肉晶莹剔透，香甜多汁，是夏日的极致享受。'
+            };
+            return descriptions[cityName] || `${cityName}美食承载着当地人的文化记忆与生活智慧。`;
+        }
+
+        // === 各地市默认侧边栏详细内容 ===
+        const cityDefaultContent = {
+            // 广府文化区域各地市
+            '广州市': {
+                title: '广州市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>羊城烟火·千年商都</h3>
+                        <p>广州，广东省会，广府文化中心，中国南方门户之城。公元前214年，秦将任嚣在此筑城，开启了两千多年的建城史。从南越国都城到清代十三行通商口岸，从海上丝绸之路起点到今日现代化国际大都市，广州始终是岭南政治、经济、文化中心。</p>
+                        <p>漫步广州街头，古今交融，南越王宫署的遗迹与广州塔的现代天际线交相辉映。这里是"食在广州"的发源地，早茶文化从这里传遍世界；这里是商贸重镇，广交会延续着千年商道的繁荣；这里是岭南文化高地，粤剧、岭南画派、广东音乐在此生根发芽。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>花城</strong> - 四季花开不败，春节赏花、秋赏菊，木棉英雄树、紫荆花、凤凰花轮番绽放</li>
+                                <li><strong>美食之都</strong> - 早茶文化享誉全球，"一盅两件"不仅是味蕾享受，更是生活艺术</li>
+                                <li><strong>商贸中心</strong> - 千年商都，十三行、广交会，永不落幕的商贸盛会</li>
+                                <li><strong>文化重镇</strong> - 粤剧发源地，岭南画派诞生地，广东音乐传播地</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>广州塔（现代地标）、陈家祠（岭南建筑艺术瑰宝）、沙面岛（欧陆风情）、北京路（千年古道）、上下九（骑楼老街）、长隆度假区、南越王博物馆、西关大屋</p>
+                        </div>
+                    </div>
+                `
+            },
+            '佛山市': {
+                title: '佛山市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>武术之乡·美食之都</h3>
+                        <p>佛山，明清时期"四大名镇"之一，岭南武术发源地。这里诞生了黄飞鸿、叶问、李小龙等武术宗师，洪拳、咏春、蔡李佛等武术门派源远流长。佛山还是粤剧的重要发源地，粤剧鼻祖张五在这里创立红船班。</p>
+                        <p>顺德作为佛山下辖区域，2014年被联合国教科文组织授予"世界美食之都"称号，是继成都之后中国第二个获此殊荣的城市。"食在广州，厨出凤城"，顺德厨师技艺精湛，顺德的桑基鱼塘生态系统被联合国粮农组织列为全球重要农业文化遗产。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>武术之乡</strong> - 洪拳、咏春、蔡李佛，黄飞鸿、叶问、李小龙</li>
+                                <li><strong>陶瓷之都</strong> - 石湾公仔，南国陶都，窑火千年不熄</li>
+                                <li><strong>美食之都</strong> - 顺德厨出凤城，双皮奶、炒牛奶、陈村粉</li>
+                                <li><strong>粤剧之乡</strong> - 琼花会馆，粤剧传承重镇</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>祖庙（岭南古建筑瑰宝）、南风古灶（五百年薪火不熄）、清晖园（广东四大名园）、西樵山、顺德美食区、梁园、南海影视城</p>
+                        </div>
+                    </div>
+                `
+            },
+            '东莞市': {
+                title: '东莞市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>莞香之城·智造之都</h3>
+                        <p>东莞，因莞香树而得名，古代香料贸易中心。中国近代史开篇地——1839年虎门销烟就在这里发生，林则徐在此销毁鸦片，打响了抗英第一枪。虎门炮台、威远炮台见证了中国人民反抗外来侵略的不屈精神。</p>
+                        <p>从"世界工厂"到"智造之都"，东莞成功转型。曾经的"三来一补"加工基地，如今成为华为、OPPO、vivo等科技巨头的生产基地，电子信息、智能制造全球领先。松山湖高新区，山水与现代科技交融，被誉为"中国硅谷"。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>莞香</strong> - 古代香料贸易中心，东莞得名之源</li>
+                                <li><strong>鸦片战争发源地</strong> - 虎门销烟，林则徐抗英</li>
+                                <li><strong>制造业名城</strong> - 电子信息、智能制造，华为、OPPO、vivo</li>
+                                <li><strong>篮球之城</strong> - CBA宏远主场，篮球文化浓厚</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>松山湖（高新区）、可园（广东四大名园）、虎门炮台（鸦片战争遗迹）、威远岛（虎门大桥）、鸦片战争博物馆</p>
+                        </div>
+                    </div>
+                `
+            },
+            '中山市': {
+                title: '中山市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>伟人故里·博爱名城</h3>
+                        <p>中山，原名香山，伟人孙中山先生故乡，中国唯一以伟人名字命名的城市。1866年，孙中山诞生于南朗镇翠亨村，从这里开始了推翻帝制、建立共和的伟大革命历程。中山先生倡导的"博爱"精神，成为城市精神的象征。</p>
+                        <p>中山是著名的侨乡，海外中山籍华侨华人超过80万。侨乡文化深厚，侨胞回乡修建的学校、医院、宗祠遍布城乡。中山装是孙中山先生设计的服装，影响了中国乃至亚洲一个世纪。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>孙中山故里</strong> - 伟人诞生地，翠亨村</li>
+                                <li><strong>侨乡文化</strong> - 百年侨史，海外联系广泛</li>
+                                <li><strong>中山装</strong> - 孙中山设计，影响深远</li>
+                                <li><strong>美食之乡</strong> - 石岐乳鸽、脆肉鲩、沙溪扣肉</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>孙中山故居、中山纪念堂、孙文西路（骑楼步行街）、詹园（孝文化主题）、岭南水乡、长江水库、罗三妹山</p>
+                        </div>
+                    </div>
+                `
+            },
+            '江门市': {
+                title: '江门市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>侨乡之源·陈皮之乡</h3>
+                        <p>江门，中国第一侨乡，五邑侨乡核心区。海外江门籍华人华侨超过400万，比本地人口还多，遍布全球107个国家和地区。从19世纪中叶开始，五邑先民乘坐"红头船"远渡重洋，在美洲、东南亚、澳大利亚等地打拼，寄回侨汇养家，返乡建屋立业。</p>
+                        <p>开平碉楼是侨乡文化的最佳见证，20世纪初，华侨返乡修建了1833座碉楼，融合了中西建筑风格，2007年被列为世界文化遗产。新会陈皮享有"千年人参，百年陈皮"的美誉。小鸟天堂是巴金散文《鸟的天堂》的原型。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>中国第一侨乡</strong> - 海外华侨华人最多的地级市</li>
+                                <li><strong>开平碉楼</strong> - 世界文化遗产，中西合璧</li>
+                                <li><strong>新会陈皮</strong> - 千年人参，百年陈皮</li>
+                                <li><strong>小鸟天堂</strong> - 巴金散文成名地</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>开平碉楼群（自力村、立园）、新会陈皮村、小鸟天堂、上下川岛、赤坎古镇、五邑华侨华人博物馆</p>
+                        </div>
+                    </div>
+                `
+            },
+            '珠海市': {
+                title: '珠海市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>百岛之市·浪漫之城</h3>
+                        <p>珠海，中国最早设立的经济特区之一，宜居花园城市，多次获评"中国最宜居城市"。毗邻港澳，面朝南海，145座岛屿散布海域。从渔村小县到现代化海滨城市，珠海走出了一条生态优先、绿色发展之路。</p>
+                        <p>情侣路是珠海的城市名片，28公里长的滨海大道，椰林海风，涛声阵阵。珠海渔女雕像矗立在香炉湾畔，手擎明珠，象征着珠海向世界奉献珍珠。横琴岛是珠海开发的热土，横琴自贸区、长隆海洋王国，粤港澳深度合作示范区正在加速建设。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>百岛之市</strong> - 145座岛屿，海岛资源丰富</li>
+                                <li><strong>经济特区</strong> - 改革开放前沿阵地</li>
+                                <li><strong>长隆海洋王国</strong> - 全球顶级海洋主题公园</li>
+                                <li><strong>横琴自贸区</strong> - 粤澳合作新平台</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>情侣路（28公里滨海大道）、珠海渔女（城市象征）、长隆海洋王国、横琴岛、外伶仃岛、东澳岛、圆明新园</p>
+                        </div>
+                    </div>
+                `
+            },
+            '肇庆市': {
+                title: '肇庆市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>岭南名郡·山水之城</h3>
+                        <p>肇庆，古称端州，岭南文化发祥地之一，两广总督府驻地。端砚闻名天下，与歙砚、洮砚、澄泥砚并称"中国四大名砚"，被誉为"文房四宝之首"。七星岩被誉为"岭南第一奇观"，五湖六岗散布，七座石灰岩峰林耸立。鼎湖山是北回归线上的绿色明珠。</p>
+                        <p>包拯曾在端州为官三年（1040-1043），清廉正直，离任时"不持一砚归"，留下"包青天"的美名。宋城墙始建于宋代，至今保存完好，是国内保存最完整的宋代古城墙之一。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>端砚故乡</strong> - 文房四宝之首，砚都</li>
+                                <li><strong>岭南第一州</strong> - 两广总督府驻地</li>
+                                <li><strong>星湖风景名胜</strong> - 七星岩、鼎湖山</li>
+                                <li><strong>包拯任职地</strong> - 包青天在端州为官三年</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>七星岩（岭南第一奇观）、鼎湖山（天然氧吧）、德庆学宫（岭南最大孔庙）、端砚文化村、宋城墙（披云楼）、悦城龙母祖庙</p>
+                        </div>
+                    </div>
+                `
+            },
+            '云浮市': {
+                title: '云浮市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>石都之乡·禅宗圣地</h3>
+                        <p>云浮，"中国石材基地"，石材储量丰富，加工技艺精湛，全国最大的石材生产和出口基地。新兴县是禅宗六祖惠能的故乡和圆寂之地，禅文化资源深厚。国恩寺是惠能圆寂后肉身安置之地，也是中国仅存的两大祖师故居之一。</p>
+                        <p>南江文化是云浮的文化根脉，古百越文化重要发源地。罗定出土的春秋战国青铜器，证明了南江流域文明的悠久。连滩山歌、禾楼舞、连滩飘色等民间艺术，生动展现了南江文化的魅力。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>中国石都</strong> - 石材产业基地</li>
+                                <li><strong>禅宗圣地</strong> - 六祖惠能故乡，国恩寺</li>
+                                <li><strong>南江文化</strong> - 古百越文化发源地</li>
+                                <li><strong>温泉之乡</strong> - 温泉资源丰富</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>国恩寺（六祖圆寂地）、蟠龙洞（喀斯特溶洞）、新兴温泉（禅意温泉）、南江文化带、龙湾风车山</p>
+                        </div>
+                    </div>
+                `
+            },
+            '湛江市': {
+                title: '湛江市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>港城湛江·海鲜天堂</h3>
+                        <p>湛江，中国大陆最南端的地级市，拥有广东最长的海岸线，2023公里海岸线，港湾众多，岛屿林立。湛江港是新中国成立后自行设计的第一个现代化深水港，西南沿海的主枢纽港。湖光岩是中国唯一的玛珥湖，世界地质公园。</p>
+                        <p>湛江是"红土文化"的代表，雷州半岛红土覆盖，雷剧、石狗、人龙舞等民俗文化独具特色。湛江海鲜名扬天下，炭烤生蚝、白切虾、清蒸石斑鱼，每一种都是海鲜爱好者的最爱。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>港口城市</strong> - 深水良港，大西南出海通道</li>
+                                <li><strong>海鲜之都</strong> - 生蚝、对虾、螃蟹、龙虾</li>
+                                <li><strong>热带风情</strong> - 雷州半岛，热带水果</li>
+                                <li><strong>红土文化</strong> - 雷剧、石狗、人龙舞</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>湖光岩（玛珥湖）、东海岛（中国第五大岛）、雷州古城、徐闻珊瑚礁、特呈岛、金沙湾</p>
+                        </div>
+                    </div>
+                `
+            },
+            '茂名市': {
+                title: '茂名市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>南方油城·荔红之乡</h3>
+                        <p>茂名，因油页岩开发而建市，被誉为"南方油城"，中国重要的石油化工基地。同时，这里是中国最大的荔枝生产基地，种植面积约139万亩，年产量约50万吨，"一骑红尘妃子笑，无人知是荔枝来"说的正是茂名荔枝。</p>
+                        <p>茂名荔枝品种丰富，妃子笑、白糖罂、桂味、糯米糍、淮枝、三月红，从三月到七月，荔枝季绵延数月。高州根子镇是"中国荔枝第一镇"，贡园村的荔枝树有1300年树龄。茂名还是道教名人潘茂名的故乡。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>南方油城</strong> - 石油化工基地</li>
+                                <li><strong>荔枝之乡</strong> - 全球最大荔枝产区</li>
+                                <li><strong>潘茂名故里</strong> - 道教名人</li>
+                                <li><strong>滨海度假</strong> - 中国第一滩</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>荔枝园（根子镇贡园村）、放鸡岛（广东最美海岛）、中国第一滩、浮山岭</p>
+                        </div>
+                    </div>
+                `
+            },
+            '深圳市': {
+                title: '深圳市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>鹏城腾飞·创新之都</h3>
+                        <p>深圳，中国改革开放的窗口，从一个小渔村蜕变为国际化大都市，创造了举世瞩目的"深圳速度"。1979年蛇口开山炮响，1980年设立经济特区，深圳成为中国特色社会主义的先行示范区。</p>
+                        <p>深圳是科技创新中心，华为、腾讯、大疆、比亚迪等科技巨头云集。这里是"设计之都""创意之都""全球全民阅读典范城市"。深圳湾、前海深港现代服务业合作区、河套深港科技创新合作区，都在加速建设。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>经济特区</strong> - 改革开放窗口，1980年设立的首批经济特区</li>
+                                <li><strong>科技创新中心</strong> - 华为、腾讯、大疆、比亚迪</li>
+                                <li><strong>设计之都</strong> - 联合国教科文组织授予</li>
+                                <li><strong>湾区核心引擎</strong> - 前海、河套，深港合作示范区</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>深圳湾（海滨生态公园、人才公园）、世界之窗（微缩景观）、欢乐谷（主题公园）、东部华侨城（生态旅游）、大梅沙海滨（金色沙滩）、蛇口海上世界、华强北（中国电子第一街）、大鹏所城（明清古城）</p>
+                        </div>
+                    </div>
+                `
+            },
+            '阳江市': {
+                title: '阳江市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>刀剪之都·海丝明珠</h3>
+                        <p>阳江，位于广东西部，南海之滨，是"海上丝绸之路"的重要中转站。阳江刀剪闻名天下，"中国刀剪之都""中国菜刀中心"，十八子作菜刀、小刀系列，家喻户晓。</p>
+                        <p>阳江还是著名的风筝之乡、温泉之乡、百里画廊、书画之乡。海陵岛是广东第四大岛，十里银滩，沙质细腻，海水清澈，是著名的滨海旅游度假区。沙扒岛、马尾岛、南鹏岛，海岛风光秀丽，是潜水爱好者的天堂。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>刀剪之都</strong> - 十八子作，中国菜刀中心，小刀系列</li>
+                                <li><strong>风筝之乡</strong> - 阳江风筝，国家级非遗</li>
+                                <li><strong>海陵岛</strong> - 广东第四大岛，十里银滩</li>
+                                <li><strong>温泉之乡</strong> - 温泉资源丰富</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>海陵岛（十里银滩、大角湾）、沙扒岛（潜水天堂）、马尾岛（海岛风光）、阳江风筝馆、广东海上丝绸之路博物馆、阳江温泉、十里泉湾（风筝放飞场）</p>
+                        </div>
+                    </div>
+                `
+            },
+            // 潮汕文化区域各地市
+            '潮州市': {
+                title: '潮州市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>岭海名邦·文化之都</h3>
+                        <p>潮州，潮汕文化发源地，国家历史文化名城，素有"岭海名邦""海滨邹鲁"之称。潮州话是潮汕话的标准音，潮州菜是潮汕菜的代表。潮州古城保存完好，是国内保存最完整的古城之一。</p>
+                        <p>广济桥是中国四大古桥之一，集梁桥、浮桥、拱桥于一体，"十八梭船二十四洲"，独特的设计展现了古代工匠的智慧。牌坊街历史上曾有39座牌坊，如今重建的23座牌坊蔚为壮观。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>国家历史文化名城</strong> - 千年古城，文物古迹众多</li>
+                                <li><strong>潮绣发源地</strong> - 中国四大名绣之一</li>
+                                <li><strong>潮瓷</strong> - 枫溪陶瓷，通花瓷，精美绝伦</li>
+                                <li><strong>潮州工夫茶</strong> - 发源地，二十一式茶艺</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>潮州古城（16公里古城墙）、广济桥（湘子桥，中国四大古桥）、开元寺（唐代古刹）、牌坊街（23座牌坊）、许驸马府（北宋建筑）、己略黄公祠（潮州木雕博物馆）</p>
+                        </div>
+                    </div>
+                `
+            },
+            '汕头市': {
+                title: '汕头市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>百载商埠·和美侨乡</h3>
+                        <p>汕头，1860年开埠，中国最早开放的港口城市之一，西方文化传入中国的重要窗口。汕头小公园是中国开埠文化的样本，20世纪30年代建设的骑楼建筑群保存完整，多元文化融合。</p>
+                        <p>汕头是经济特区，1980年与深圳、珠海、厦门同时设立。潮汕籍华侨华人众多，侨乡文化浓厚，侨批档案被列入"世界记忆遗产"。南澳岛是广东唯一的海岛县，青澳湾是广东省两个A级沐浴海滩之一。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>经济特区</strong> - 首批沿海开放城市</li>
+                                <li><strong>百载商埠</strong> - 开埠历史悠久</li>
+                                <li><strong>侨乡</strong> - 海外潮人众多，侨批世界记忆遗产</li>
+                                <li><strong>潮剧之乡</strong> - 潮剧重要传承地</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>小公园（骑楼建筑群）、汕头老城（旧海关、邮政局）、南澳岛（青澳湾、总兵府）、礐石风景区（石林奇观）、汕头大学、达濠古城</p>
+                        </div>
+                    </div>
+                `
+            },
+            '揭阳市': {
+                title: '揭阳市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>岭南水城·五金基地</h3>
+                        <p>揭阳，广东省历史文化名城，被誉为"亚洲玉都""中国五金基地市"。揭阳建县于秦始皇三十三年（前214年），有2200多年建县史，是潮汕地区历史最悠久的城市之一。</p>
+                        <p>揭阳玉器产业发达，阳美玉都是全国最大的玉器加工销售中心，每年玉器交易额超过300亿元。揭阳五金不锈钢产业也很发达，占全国市场份额的30%以上。黄满寨瀑布是粤东最大的瀑布群，落差达60米。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>亚洲玉都</strong> - 玉器产业基地，交易额超300亿</li>
+                                <li><strong>五金基地</strong> - 五金不锈钢产业</li>
+                                <li><strong>岭南水城</strong> - 水网密布</li>
+                                <li><strong>揭阳学宫</strong> - 岭南最大孔庙</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>揭阳学宫（岭南最大孔庙）、阳美玉都（玉器交易市场）、黄满寨瀑布（粤东最大瀑布群）、普宁英歌舞（观看英歌舞表演）、惠来海滨、德安里（方氏家族古寨）</p>
+                        </div>
+                    </div>
+                `
+            },
+            '汕尾市': {
+                title: '汕尾市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>滨海红城·渔港风情</h3>
+                        <p>汕尾，红海湾风光秀丽，渔港风情浓郁。这里曾是海陆丰苏维埃政权所在地，中国第一个县级苏维埃政权诞生地，红色文化深厚。汕尾渔民画独具特色，是国家级非遗。</p>
+                        <p>红海湾是汕尾最美的海滨，遮浪半岛突入南海，东海观涛，南海冲浪。汕尾港是粤东重要的渔港，海鲜市场活蹦乱跳的对虾、螃蟹、石斑鱼，现点现做，新鲜美味。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>红色土地</strong> - 海陆丰苏维埃，中国第一个县级苏维埃政权</li>
+                                <li><strong>红海湾</strong> - 海滨旅游胜地，风电场</li>
+                                <li><strong>渔港风情</strong> - 汕尾港、马宫港</li>
+                                <li><strong>民间艺术</strong> - 渔民画、白字戏</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>红海湾（遮浪半岛）、凤山祖庙（妈祖文化）、澎湃故居（海陆丰苏维埃旧址）、碣石镇（玄武山、国家级渔港）、铜鼎山旅游区</p>
+                        </div>
+                    </div>
+                `
+            },
+            // 客家文化区域各地市
+            '梅州市': {
+                title: '梅州市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>世界客都·叶帅故乡</h3>
+                        <p>梅州，客家之都，全球客家人的精神家园。梅州是客家人南迁的最后落脚点，也是海外客家主要祖籍地。梅州话是客家话的标准音，梅州是客家文化的研究中心、传播中心。</p>
+                        <p>梅州是叶剑英元帅的故乡，1897年叶剑英诞生于梅县雁洋镇。梅州围龙屋是客家建筑的代表，与福建土楼、赣南围屋并称客家三大建筑形式。梅州还是广东汉剧的发源地。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>世界客都</strong> - 全球客都，客家文化中心</li>
+                                <li><strong>叶帅故乡</strong> - 叶剑英元帅诞生地</li>
+                                <li><strong>围龙屋之乡</strong> - 客家围龙屋保存最完好</li>
+                                <li><strong>广东汉剧</strong> - 国家级非遗，客家戏曲代表</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>叶剑英纪念园（元帅故居）、客家围龙屋（桥溪古村、群丰村）、雁南飞茶田（万亩茶园）、五指石（丹霞地貌）、梅县雁洋镇（叶剑英故里）</p>
+                        </div>
+                    </div>
+                `
+            },
+            '惠州市': {
+                title: '惠州市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>半城山色半城湖</h3>
+                        <p>惠州，粤港澳大湾区重要城市，客家文化与广府文化交融之地。惠州西湖、东江、罗浮山，山湖相依，景色宜人。苏东坡曾在惠州为官三年，写下"日啖荔枝三百颗，不辞长作岭南人"的诗句。</p>
+                        <p>惠州西湖是中国西湖三十六之一，有"海内西湖三十六，唯惠州足并杭州"的美誉。罗浮山是岭南第一山，中国道教第七洞天。惠州是客家文化与广府文化交融之地，既有客家山歌、客家美食，又有广府早茶、广府建筑。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>岭南名郡</strong> - 东江流域政治经济中心</li>
+                                <li><strong>西湖美景</strong> - 中国西湖三十六，唯惠州足并杭州</li>
+                                <li><strong>东江纵队</strong> - 抗日根据地，革命老区</li>
+                                <li><strong>客侨之乡</strong> - 客家文化与华侨文化融合</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>惠州西湖（苏堤、泗洲塔）、罗浮山（岭南第一山）、巽寮湾（海滨度假）、平海古城（明代古城）、南昆山（北回归线上的绿洲）</p>
+                        </div>
+                    </div>
+                `
+            },
+            '河源市': {
+                title: '河源市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>客家古邑·万绿湖畔</h3>
+                        <p>河源，东江源头，客家古邑。新港客家小镇保存着完整的客家民俗，客家山歌、客家美食、客家建筑，客家文化在这里得到完整传承。万绿湖是华南最大的人工湖，水域面积370平方公里。</p>
+                        <p>苏家围是苏东坡后裔聚居地，苏东坡的曾孙苏符迁徙到这里，建立了苏家围。河源还是"恐龙之乡"，出土了大量恐龙蛋化石，是世界上出土恐龙蛋化石最多的地区。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>客家古邑</strong> - 东江流域客家文化中心</li>
+                                <li><strong>万绿湖</strong> - 华南最大人工湖，大湾区后花园</li>
+                                <li><strong>苏家围</strong> - 苏东坡后裔聚居地</li>
+                                <li><strong>恐龙蛋化石</strong> - 世界上出土最多的地区</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>万绿湖（游船观光）、苏家围（客家古建筑）、恐龙博物馆、新港客家小镇（客家民俗表演）、巴伐利亚庄园（欧式庄园）、镜花缘（古典园林）</p>
+                        </div>
+                    </div>
+                `
+            },
+            '韶关市': {
+                title: '韶关市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>岭南名郡·三省通衢</h3>
+                        <p>韶关，粤北门户，连接湖南、江西的咽喉要道，有"三省通衢"之称。韶关历史悠久，是岭南文明的发祥地之一，马坝人头骨化石证明，12万年前就有古人类在这里活动。</p>
+                        <p>丹霞山是世界自然遗产，世界地质公园，"色如渥丹，灿若明霞"。南华寺是禅宗六祖惠能弘法之地，禅宗祖庭。珠玑古巷是广府人的发源地，梅关古道是古代中原通往岭南的驿道。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>岭南名郡</strong> - 粤北政治经济文化中心</li>
+                                <li><strong>丹霞山</strong> - 世界自然遗产，丹霞地貌命名地</li>
+                                <li><strong>南华寺</strong> - 禅宗祖庭，六祖道场</li>
+                                <li><strong>红色热土</strong> - 红军长征经过地</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>丹霞山（阳元石、阴元石）、南华寺（六祖殿）、珠玑古巷（广府人发源地）、梅关古道（古代驿道）、梅岭温泉、广东大峡谷（乳源大峡谷）</p>
+                        </div>
+                    </div>
+                `
+            },
+            '清远市': {
+                title: '清远市',
+                content: `
+                    <div class="city-default-content">
+                        <h3>凤城山水·温泉之乡</h3>
+                        <p>清远，珠三角后花园，山水资源丰富，"中国温泉之城"。连南、连山是少数民族自治县，瑶族、壮族文化特色鲜明，连南排瑶是瑶族的重要分支。</p>
+                        <p>清远温泉资源丰富，银盏温泉、佛冈温泉、古龙峡温泉，泉眼众多。清远还是"漂流之乡"，古龙峡漂流、黄腾峡漂流，漂流线路众多。连南南岗千年瑶寨是瑶族文化的活化石。</p>
+                        <div class="city-section">
+                            <h4>城市名片</h4>
+                            <ul>
+                                <li><strong>中国温泉之城</strong> - 温泉资源丰富</li>
+                                <li><strong>少数民族</strong> - 瑶族、壮族文化</li>
+                                <li><strong>漂流之乡</strong> - 多条漂流线路</li>
+                                <li><strong>清远鸡</strong> - 广东名鸡，山林放养</li>
+                            </ul>
+                        </div>
+                        <div class="city-section">
+                            <h4>必游之地</h4>
+                            <p>连南瑶寨（南岗千年瑶寨）、古龙峡漂流（华南落差最大）、牛鱼嘴（登山胜地）、佛冈温泉、飞霞山（道教名山）、笔架山（清远第二峰）</p>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        // === 美食详细内容数据 ===
+        const foodDetailData = {
+            '一盅两件': {
+                city: '广州',
+                img: 'dimsum.png',
+                subtitle: '【广州】早茶文化的灵魂',
+                description: `
+                    <p><strong>历史渊源</strong></p>
+                    <p>一盅两件，广府话意为"一壶茶，两件点心"，是广州早茶文化的经典代表。这一习俗起源于清代咸丰同治年间，距今已有百余年历史。最初是为满足体力劳动者早餐需求，后来逐渐演变为广府人社交休闲的重要方式。</p>
+
+                    <p><strong>制作工艺</strong></p>
+                    <p>广式点心制作精细，讲究皮薄馅靓、造型精美。常见的"两件"包括虾饺、烧卖、叉烧包、肠粉等。虾饺皮薄如蝉翼，晶莹剔透；烧卖馅料丰富，口感鲜美；叉烧包松软香甜，叉烧馅料饱满。每一样点心都凝聚着点心师傅的匠心技艺。</p>
+
+                    <p><strong>文化内涵</strong></p>
+                    <p>一盅两件不仅是美食，更是一种生活方式。每天清晨，茶楼里座无虚席，三五好友围坐一桌，"叹早茶"（享受早茶），品茗尝点，谈天说地。这份悠闲与惬意，体现了广府人"食得是福"的生活哲学。</p>
+
+                    <p><strong>推荐品尝</strong></p>
+                    <p>广州陶陶居、莲香楼、点都德等老字号茶楼，都能品尝到正宗的一盅两件。建议搭配普洱茶或菊花茶，既能解腻，又能更好地品味点心的鲜美。</p>
+                `
+            },
+            '双皮奶': {
+                city: '佛山',
+                img: 'milk.png',
+                subtitle: '【顺德】世界美食之都的招牌甜品',
+                description: `
+                    <p><strong>历史渊源</strong></p>
+                    <p>双皮奶起源于清朝末年的顺德大良，距今已有百余年历史。顺德作为"世界美食之都"，是粤菜的发源地之一。双皮奶凭借其独特的制作工艺和香滑口感，成为顺德最具代表性的甜品。</p>
+
+                    <p><strong>制作工艺</strong></p>
+                    <p>正宗的双皮奶选用新鲜水牛奶制作。首先将牛奶煮热后倒入碗中，冷却后形成第一层奶皮；倒出牛奶，将奶皮留碗底；将倒出的牛奶加蛋清、糖混合均匀，过筛后倒回碗中，让奶皮浮起；蒸制后形成第二层奶皮。两层奶皮，上层甘香，下层香滑，口感层次丰富。</p>
+
+                    <p><strong>特色</strong></p>
+                    <p>顺德双皮奶奶香浓郁，口感香滑，入口即化。奶皮厚薄适中，既保留了牛奶的醇香，又不会过于厚重。一碗好的双皮奶，奶皮完整、奶冻嫩滑，甜而不腻，回味无穷。</p>
+
+                    <p><strong>推荐品尝</strong></p>
+                    <p>顺德的民信老铺、仁信老铺都是百年老字号，双皮奶制作正宗。除了原味，还有红豆、芒果、榴莲等多种口味可供选择。</p>
+                `
+            },
+            '烧鹅濑粉': {
+                city: '东莞',
+                img: 'goose_noodle.png',
+                subtitle: '【东莞】皮脆肉嫩的客家烧鹅与爽滑濑粉',
+                description: `
+                    <p><strong>历史渊源</strong></p>
+                    <p>烧鹅濑粉是东莞的传统美食，结合了客家烧鹅工艺和本地濑粉制作技艺。濑粉是东莞的传统面食，历史悠久，因其制作时将米浆"濑"入沸水中而得名。</p>
+
+                    <p><strong>制作工艺</strong></p>
+                    <p>东莞烧鹅选用本地优质鹅种，经过腌制、风干、烤制等多道工序。烤制时用炭火慢烤，使鹅皮金黄酥脆，鹅肉鲜嫩多汁。濑粉选用优质大米，浸泡后磨成米浆，通过特制濑粉板将米浆"濑"入沸水，煮熟后过冷水，使口感更加爽滑弹牙。</p>
+
+                    <p><strong>特色</strong></p>
+                    <p>烧鹅濑粉的最佳吃法是将烧鹅斩件铺在濑粉上，淋上烧鹅汁。烧鹅皮脆肉嫩，油脂丰腴而不腻；濑粉爽滑弹牙，吸饱了烧鹅的汤汁后更加鲜美。一口烧鹅，一口濑粉，口感层次丰富，满足感十足。</p>
+
+                    <p><strong>推荐品尝</strong></p>
+                    <p>东莞厚街、高埗等地的烧鹅濑粉最为正宗。建议搭配一碗热汤，更加暖心暖胃。</p>
+                `
+            },
+            '石岐乳鸽': {
+                city: '中山',
+                img: 'pigeon.png',
+                subtitle: '【中山】妙龄乳鸽的极致美味',
+                description: `
+                    <p><strong>历史渊源</strong></p>
+                    <p>石岐乳鸽是中山石岐区的传统名菜，始创于1914年，已有百年历史。选用中山石岐产的乳鸽，经过独特的腌制和烤制工艺，成为粤菜中的经典。</p>
+
+                    <p><strong>制作工艺</strong></p>
+                    <p>石岐乳鸽选用出生25天左右的妙龄乳鸽，肉质最为鲜嫩。腌制时使用五香粉、酱油、糖等多种调料，腌制时间严格控制，确保味道入味但不抢味。烤制时先用高温锁住肉汁，再低温慢烤至皮脆肉嫩。整个过程需要经验丰富的师傅掌握火候和时间。</p>
+
+                    <p><strong>特色</strong></p>
+                    <p>石岐乳鸽皮脆如纸，色泽金黄；肉嫩多汁，鲜美可口。咬一口，皮脆肉嫩，汁水四溢，满口留香。乳鸽肉低脂高蛋白，营养丰富，是老少皆宜的美味佳肴。</p>
+
+                    <p><strong>推荐品尝</strong></p>
+                    <p>中山石岐的许多老字号酒家都能品尝到正宗的石岐乳鸽。建议趁热食用，最能品尝到皮脆肉嫩的最佳口感。</p>
+                `
+            },
+            '新会陈皮': {
+                city: '江门',
+                img: 'chenpi.png',
+                subtitle: '【江门】时光沉淀的陈香瑰宝',
+                description: `
+                    <p><strong>历史渊源</strong></p>
+                    <p>新会陈皮是江门新会的特产，享有"千年人参，百年陈皮"的美誉。新会陈皮制作历史可追溯至宋代，距今已有千余年历史。其制作技艺于2021年被列入国家级非物质文化遗产名录。</p>
+
+                    <p><strong>制作工艺</strong></p>
+                    <p>新会陈皮选用新会特有的茶枝柑果皮，经过开皮、翻皮、晒制、陈化等多道工序。最关键的是陈化过程，陈皮需要在自然环境下存放三年以上，时间越久，品质越好。陈化过程中，果皮内的成分发生转化，产生独特的陈香。</p>
+
+                    <p><strong>特色</strong></p>
+                    <p>新会陈皮色泽棕红，质地柔韧，香气浓郁。其独特的陈香难以复制，入药入膳皆为宝。陈皮可以理气健脾、燥湿化痰，在中药中有广泛应用。在烹饪中，陈皮可以增香去腥，是制作陈皮鸭、陈皮骨等广东名菜的重要调料。</p>
+
+                    <p><strong>推荐品尝</strong></p>
+                    <p>新会有许多陈皮老店，可以参观陈皮的储存和制作过程。陈皮鸭、陈皮红豆沙、陈皮普洱茶都是不容错过的陈皮美食。</p>
+                `
+            },
+            '横琴生蚝': {
+                city: '珠海',
+                img: 'oyster.png',
+                subtitle: '【珠海】海洋馈赠的鲜美珍馐',
+                description: `
+                    <p><strong>历史渊源</strong></p>
+                    <p>横琴生蚝产自珠海横琴岛，这里水质纯净，营养丰富，非常适合生蚝生长。横琴生蚝养殖历史悠久，是珠海最具特色的海鲜之一。</p>
+
+                    <p><strong>生长环境</strong></p>
+                    <p>横琴岛位于珠江口西岸，咸淡水交汇，水温适宜，浮游生物丰富，为生蚝提供了得天独厚的生长环境。这里的生蚝肉质肥美，鲜嫩爽口，营养丰富，富含蛋白质、锌等多种营养元素。</p>
+
+                    <p><strong>烹饪方式</strong></p>
+                    <p>横琴生蚝的烹饪方式多样，各有特色。清蒸生蚝最能保持原汁原味，只需加点姜丝和蒸鱼豉油；蒜蓉烤生蚝香气四溢，蒜香与蚝香完美融合；芝士焗生蚝口感浓郁，芝士的奶香与生蚝的鲜美相得益彰。</p>
+
+                    <p><strong>推荐品尝</strong></p>
+                    <p>横琴岛上有许多生蚝养殖场和海鲜餐厅，可以品尝到最新鲜的生蚝。每年秋季是生蚝最肥美的季节，是品尝的最佳时机。</p>
+                `
+            },
+            '裹蒸粽': {
+                city: '肇庆',
+                img: 'zongzi.png',
+                subtitle: '【肇庆】体硕如枕的岭南名粽',
+                description: `
+                    <p><strong>历史渊源</strong></p>
+                    <p>裹蒸粽是肇庆的传统美食，历史悠久，可追溯至宋代。与其他地方的粽子不同，肇庆裹蒸粽以其独特的造型和丰富的馅料闻名，是广东粽子的代表。</p>
+
+                    <p><strong>制作工艺</strong></p>
+                    <p>肇庆裹蒸粽采用肇庆特有的冬叶包裹，这种冬叶大小适中，韧性好，香气独特。包裹时用糯米、绿豆、五花肉等馅料，按一定层次堆叠，包裹成枕头状，用草绳绑扎牢固。蒸制时间长达8-10小时，确保所有食材熟透入味。</p>
+
+                    <p><strong>特色</strong></p>
+                    <p>肇庆裹蒸粽体硕如枕，重达一斤以上，一个就能管饱。冬叶的清香渗入米中，糯米软糯，绿豆绵密，五花肉肥而不腻。各种食材的味道相互渗透，口感丰富，热食清香扑鼻，冷食风味独特。</p>
+
+                    <p><strong>推荐品尝</strong></p>
+                    <p>肇庆许多老字号粽子店都有裹蒸粽出售。端午节期间是品尝的最佳时节，但平时也能买到。加热后食用最能品尝到最佳口感。</p>
+                `
+            },
+            '石磨肠粉': {
+                city: '云浮',
+                img: 'rice_roll.png',
+                subtitle: '【云浮】米浆现磨的传统工艺',
+                description: `
+                    <p><strong>历史渊源</strong></p>
+                    <p>肠粉是广东传统的早点，遍布岭南各地。云浮石磨肠粉坚持传统石磨工艺，是肠粉中的精品。石磨肠粉在云浮已有百年历史，是当地人的早餐首选。</p>
+
+                    <p><strong>制作工艺</strong></p>
+                    <p>云浮石磨肠粉的关键在于米浆的制作。选用优质大米，浸泡后用石磨慢慢磨成米浆。石磨转速慢，磨出的米浆细腻均匀，能最大程度保留大米的香味。蒸制时将米浆倒在特制的蒸盘上，加入馅料（如鸡蛋、肉末、虾仁等），蒸制后卷成肠粉状。</p>
+
+                    <p><strong>特色</strong></p>
+                    <p>云浮石磨肠粉薄如蝉翼，洁白晶莹，口感爽滑，米香浓郁。肠粉皮薄而不破，馅料丰富多样。淋上特制的酱油，撒上葱花，简单却美味。一份肠粉，一碗白粥，就是云浮人最满足的早餐。</p>
+
+                    <p><strong>推荐品尝</strong></p>
+                    <p>云浮各地的早餐店都能品尝到石磨肠粉。推荐尝试鸡蛋肠、肉肠、虾仁肠等不同口味，每种都有独特的风味。</p>
+                `
+            },
+            '白切鸡': {
+                city: '湛江',
+                img: 'chicken.png',
+                subtitle: '【湛江】皮爽肉滑的原汁原味',
+                description: `
+                    <p><strong>历史渊源</strong></p>
+                    <p>白切鸡是广东的传统名菜，湛江白切鸡更是其中的佼佼者。湛江地处雷州半岛，盛产优质三黄鸡，为白切鸡提供了绝佳的原料。白切鸡制作简单，却最能体现鸡的品质和厨师的技术。</p>
+
+                    <p><strong>制作工艺</strong></p>
+                    <p>湛江白切鸡选用优质三黄鸡，这种鸡羽毛黄、爪黄、嘴黄，肉质鲜嫩。制作时先将鸡整只放入微沸的水中，浸煮至熟，取出后立即放入冰水中浸泡，使鸡皮收缩，形成爽脆的口感。这个过程需要严格控制水温和时间，确保鸡肉刚熟而不老。</p>
+
+                    <p><strong>特色</strong></p>
+                    <p>湛江白切鸡皮爽肉滑，原汁原味，鸡味浓郁。鸡皮金黄爽脆，鸡肉洁白鲜嫩，骨髓微红，保留了鸡肉的鲜美本味。搭配沙姜酱油蘸料，沙姜的辛香更能衬托鸡肉的鲜甜。</p>
+
+                    <p><strong>推荐品尝</strong></p>
+                    <p>湛江许多酒家和农家乐都能品尝到正宗的白切鸡。建议当天宰杀当天食用，最能品尝到最新鲜的口感。</p>
+                `
+            },
+            '妃子笑荔枝': {
+                city: '茂名',
+                img: 'lychee.png',
+                subtitle: '【茂名】一骑红尘妃子笑',
+                description: `
+                    <p><strong>历史渊源</strong></p>
+                    <p>茂名荔枝种植历史悠久，可追溯至汉代。"一骑红尘妃子笑，无人知是荔枝来"，说的正是茂名荔枝。妃子笑是茂名荔枝最著名的品种之一，因其果皮青红相间，犹如妃子嫣然一笑而得名。</p>
+
+                    <p><strong>品种特色</strong></p>
+                    <p>妃子笑荔枝果实硕大，单果重达30克以上。果皮青红相间，色泽鲜艳；果肉晶莹剔透，洁白如玉；口感香甜多汁，回味甘甜。妃子笑成熟较早，每年5月下旬即可上市，是荔枝季的开篇之作。</p>
+
+                    <p><strong>营养价值</strong></p>
+                    <p>荔枝富含维生素C、葡萄糖、蔗糖等多种营养成分，有"果中之王"的美誉。中医认为荔枝有补脾益肝、理气补血的功效。但荔枝性温，不宜过量食用，以免上火。</p>
+
+                    <p><strong>推荐品尝</strong></p>
+                    <p>茂名高州、电白等地是荔枝的主要产区。每年5-7月是荔枝季，可以亲自到果园采摘，品尝最新鲜的荔枝。除了鲜食，荔枝还可以制作荔枝干、荔枝酒、荔枝罐头等产品。</p>
+                `
+            }
+        };
+
+        // === 打开美食详情悬浮窗 ===
+        window.openFoodDetail = function(foodName) {
+            const foodData = foodDetailData[foodName];
+            if (!foodData) return;
+
+            document.getElementById('food-detail-image').src = './static/2FOOD/' + foodData.img;
+            document.getElementById('food-detail-title').innerText = foodName;
+            document.getElementById('food-detail-subtitle').innerText = foodData.subtitle;
+            document.getElementById('food-detail-description').innerHTML = foodData.description;
+
+            document.getElementById('food-detail-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // 禁止背景滚动
+        };
+
+        // === 关闭美食详情悬浮窗 ===
+        window.closeFoodDetail = function() {
+            document.getElementById('food-detail-modal').classList.add('hidden');
+            document.body.style.overflow = ''; // 恢复背景滚动
+        };
+
+        // === 各文化区域和地市的侧边栏内容数据 ===
+        const zoneContentData = {
+            // 默认侧边栏内容（未选择美食/栖居/非遗时显示）
+            default: {
+                广府: {
+                    title: '广府文化',
+                    content: `
+                        <div class="zone-default-content">
+                            <h3>千年商都·广府风华</h3>
+
+                            <div class="zone-section">
+                                <h4>文化概述</h4>
+                                <p>广府文化，是岭南文化的核心代表，发源于珠江三角洲，以广州为中心。这里自古便是中国对外贸易的重要窗口，海上丝绸之路的起点，两千多年来商贾云集，人文荟萃，孕育了开放包容、务实创新的广府精神。</p>
+                            </div>
+
+                            <div class="zone-section">
+                                <h4>文化特色</h4>
+                                <p><strong>食在广州</strong> - 广府人讲究"食得是福"，早茶文化闻名遐迩。一盅两件，不仅是味蕾的享受，更是生活的艺术。从清晨的茶楼到夜晚的骑楼街，广府人的生活节奏中既有"叹世界"的悠闲，又有"敢为天下先"的闯劲。</p>
+                                <p><strong>建筑瑰宝</strong> - 广府建筑融合中原智慧与岭南气候，西关大屋的趟拢门、满洲窗，每一处细节都体现匠心；骑楼街的廊柱连接街道与商铺，既遮阳避雨，又促进商业繁荣。</p>
+                                <p><strong>粤剧雅韵</strong> - 广府是粤剧发源地，"南国红豆"绽珠三角戏台。婉转唱腔、精美服饰、细腻表演，讲述才子佳人故事，传承忠孝节义价值观。</p>
+                            </div>
+
+                            <div class="zone-section">
+                                <h4>代表成就</h4>
+                                <p>从陈家祠的建筑瑰宝到岭南画派的创新，从广东音乐的悠扬到醒狮表演的威武，广府文化在艺术、工艺、音乐等领域都有卓越成就。</p>
+                            </div>
+
+                            <div class="zone-explore-hint">
+                                <p>👆 点击上方的 🔴 寻味·美食、🔵 栖居·建筑、🟡 非遗·风俗 按钮，或点击地图上的地市，深入探索广府文化</p>
+                            </div>
+                        </div>
+                    `
+                },
+                潮汕: {
+                    title: '潮汕文化',
+                    content: `
+                        <div class="zone-default-content">
+                            <h3>海滨邹鲁·潮汕风韵</h3>
+
+                            <div class="zone-section">
+                                <h4>文化概述</h4>
+                                <p>潮汕文化，位于广东东部沿海，包括潮州、汕头、揭阳、汕尾等地。这里三面背山，一面向海，独特的地理位置孕育了潮汕人"敢闯敢拼、崇文重教"的性格特质。潮汕话被誉为"古汉语的活化石"，保留了许多中原古音。</p>
+                            </div>
+
+                            <div class="zone-section">
+                                <h4>文化特色</h4>
+                                <p><strong>工夫茶韵</strong> - 工夫茶是潮汕人的精神象征。一杯茶，三个杯，无论贫富贵贱，围坐品茗，以茶会友。冲茶的每一个步骤都讲究仪式感，体现了潮汕人对生活的精致追求。"宁可三日无米，不可一日无茶"。</p>
+                                <p><strong>美食之乡</strong> - 潮汕菜以"清、鲜、嫩、滑、爽"著称。从潮汕牛肉火锅到生腌海鲜，从达濠鱼丸到蚝烙，每一道菜都凝聚着潮汕人对美食的执着。潮汕人善烹海鲜，追求食材本味。</p>
+                                <p><strong>工艺美术</strong> - 潮汕木雕、石雕、嵌瓷工艺精湛，装饰在祠堂庙宇之上，金碧辉煌。英歌舞气势磅礴，舞者脸谱油彩，手持双棒，配合锣鼓节奏起舞，展现潮汕人的豪迈气概。</p>
+                            </div>
+
+                            <div class="zone-section">
+                                <h4>海洋精神</h4>
+                                <p>潮汕人有着深厚的海洋情结。历史上，红头船载着潮汕先民漂洋过海，下南洋谋生。这种"过番"文化造就了潮汕人敢于冒险、勤劳务实的品质。如今，潮汕商人遍布全球，"有潮水的地方就有潮人"。</p>
+                            </div>
+
+                            <div class="zone-explore-hint">
+                                <p>👆 点击上方的 🔴 寻味·美食、🔵 栖居·建筑、🟡 非遗·风俗 按钮，或点击地图上的地市，深入探索潮汕文化</p>
+                            </div>
+                        </div>
+                    `
+                },
+                客家: {
+                    title: '客家文化',
+                    content: `
+                        <div class="zone-default-content">
+                            <h3>山居耕读·客家情怀</h3>
+
+                            <div class="zone-section">
+                                <h4>文化概述</h4>
+                                <p>客家文化，源于中原汉族的多次南迁。客家人"此间无原籍，客地从何来"，在岭南山区扎根生息，形成了独特的客家文化。客家话保留了大量中原古韵，客家文化既有中原文化的根基，又融合了南方山地的特色。</p>
+                            </div>
+
+                            <div class="zone-section">
+                                <h4>文化特色</h4>
+                                <p><strong>围龙屋</strong> - 围龙屋是客家人的精神图腾。这种建筑依山而建，层层围合，宛如堡垒。从堂屋到横屋，从天井到化胎，每一处建筑都有深刻的文化寓意。围龙屋不仅是居住之所，更是家族凝聚力的象征。</p>
+                                <p><strong>客家美食</strong> - 客家菜以咸香浓郁著称，代表菜如梅菜扣肉、盐焗鸡、客家酿豆腐等，都体现了客家人在山区生活中形成的烹饪智慧。客家人酿菜技艺独特，将馅料酿入食材中，寓意"包容"与"融合"。</p>
+                                <p><strong>山歌汉剧</strong> - 客家山歌悠扬动听，是客家人抒发情感的方式。从劳动山歌到爱情山歌，从叙事山歌到劝世山歌，山歌承载着客家人的历史记忆和情感世界。广东汉剧古朴典雅，唱腔悠扬。</p>
+                            </div>
+
+                            <div class="zone-section">
+                                <h4>耕读传统</h4>
+                                <p>客家人崇文尚武，耕读传家。在艰苦的山区环境中，客家人依然重视教育，祠堂往往也是学堂。"有子不读书，不如养头猪"的俗语，道出了客家人对教育的重视。这种传统培养了众多客家名人，从古代的文天祥到近代的叶剑英，客家人才辈出。</p>
+                            </div>
+
+                            <div class="zone-explore-hint">
+                                <p>👆 点击上方的 🔴 寻味·美食、🔵 栖居·建筑、🟡 非遗·风俗 按钮，或点击地图上的地市，深入探索客家文化</p>
+                            </div>
+                        </div>
+                    `
+                }
+            },
+            food: {
+                广府: {
+                    title: '广府·寻味美食',
+                    content: `
+                        <div class="zone-food-content">
+                            <img src="./static/2FOOD/dimsum.png" alt="一盅两件" class="food-header-image">
+                            <h3>食在广州，味在广府</h3>
+                            <p>广府美食，源远流长，是岭南文化的重要组成部分。从清晨的一盅两件开始，老广们用精致的点心开启美好的一天。</p>
+
+                            <h4>美食特色</h4>
+                            <p>广府菜讲究"清、鲜、嫩、滑、爽、香"，追求食材的本味。无论是早茶文化中的精致点心，还是街头巷尾的煲仔饭、云吞面，都体现了广府人对美食的极致追求。</p>
+
+                            <h4>探索各地市美食</h4>
+                            <p>点击地图上的地市，探索各地特色美食：</p>
+                            <ul style="margin-top: 10px; padding-left: 20px; color: #ccc;">
+                                <li><strong>广州</strong> - 一盅两件，早茶文化</li>
+                                <li><strong>佛山（顺德）</strong> - 双皮奶，世界美食之都</li>
+                                <li><strong>东莞</strong> - 烧鹅濑粉，皮脆肉嫩</li>
+                                <li><strong>中山</strong> - 石岐乳鸽，妙龄佳肴</li>
+                                <li><strong>江门</strong> - 新会陈皮，时光陈香</li>
+                                <li><strong>珠海</strong> - 横琴生蚝，海洋馈赠</li>
+                                <li><strong>肇庆</strong> - 裹蒸粽，体硕如枕</li>
+                                <li><strong>云浮</strong> - 石磨肠粉，薄如蝉翼</li>
+                                <li><strong>湛江</strong> - 白切鸡，皮爽肉滑</li>
+                                <li><strong>茂名</strong> - 妃子笑荔枝，一骑红尘</li>
+                            </ul>
+                        </div>
+                    `
+                },
+                潮汕: {
+                    title: '潮汕·寻味美食',
+                    content: `
+                        <div class="zone-food-content">
+                            <h3>潮汕味道，工夫茶香</h3>
+                            <p>潮汕美食讲究原汁原味，追求食材的新鲜和本味。从牛肉火锅到潮汕粿条，每一道菜都蕴含着潮汕人对美食的执着与热爱。</p>
+                            <p><em>（内容建设中，敬请期待...）</em></p>
+                        </div>
+                    `
+                },
+                客家: {
+                    title: '客家·寻味美食',
+                    content: `
+                        <div class="zone-food-content">
+                            <h3>客家风味，山野珍馐</h3>
+                            <p>客家美食多取材于山野，讲究咸香浓郁。客家酿菜、盐焗鸡、梅菜扣肉等经典菜肴，承载着客家人耕读传家的文化记忆。</p>
+                            <p><em>（内容建设中，敬请期待...）</em></p>
+                        </div>
+                    `
+                }
+            },
+            arch: {
+                广府: {
+                    title: '广府·栖居建筑',
+                    content: `
+                        <div class="zone-arch-content">
+                            <h3>骑楼西关，广府风韵</h3>
+                            <p>广府建筑融合了中原建筑与岭南气候特点，形成了独特的建筑风格。西关大屋的趟拢门、骑楼街的廊柱，无不诉说着广府人的生活智慧。</p>
+                            <p><em>（内容建设中，敬请期待...）</em></p>
+                        </div>
+                    `
+                },
+                潮汕: {
+                    title: '潮汕·栖居建筑',
+                    content: `
+                        <div class="zone-arch-content">
+                            <h3>下山虎四点金，潮汕古厝</h3>
+                            <p>潮汕建筑以"下山虎"、"四点金"为代表，格局严谨，装饰精美。木雕、石雕、嵌瓷等工艺在建筑上得到完美体现。</p>
+                            <p><em>（内容建设中，敬请期待...）</em></p>
+                        </div>
+                    `
+                },
+                客家: {
+                    title: '客家·栖居建筑',
+                    content: `
+                        <div class="zone-arch-content">
+                            <h3>围龙屋屹立，家族聚居</h3>
+                            <p>客家围龙屋是客家建筑的代表，体现了客家人聚族而居的传统。层层围合的院落，既是家族的堡垒，也是文化的传承。</p>
+                            <p><em>（内容建设中，敬请期待...）</em></p>
+                        </div>
+                    `
+                }
+            },
+            folk: {
+                广府: {
+                    title: '广府·非遗风俗',
+                    content: `
+                        <div class="zone-folk-content">
+                            <h3>粤剧醒狮，广府非遗</h3>
+                            <p>广府非遗丰富多彩，粤剧的婉转唱腔、醒狮的威武身姿、龙舟的竞渡精神，都是广府文化的重要载体。</p>
+                            <p><em>（内容建设中，敬请期待...）</em></p>
+                        </div>
+                    `
+                },
+                潮汕: {
+                    title: '潮汕·非遗风俗',
+                    content: `
+                        <div class="zone-folk-content">
+                            <h3>英歌舞动，潮汕非遗</h3>
+                            <p>潮汕非遗独具特色，英歌舞的豪迈气势、潮剧的婉转优美、工夫茶的细致讲究，展现了潮汕人的文化自信。</p>
+                            <p><em>（内容建设中，敬请期待...）</em></p>
+                        </div>
+                    `
+                },
+                客家: {
+                    title: '客家·非遗风俗',
+                    content: `
+                        <div class="zone-folk-content">
+                            <h3>山歌汉剧，客家非遗</h3>
+                            <p>客家非遗承载着客家人的历史记忆，客家山歌的悠扬、广东汉剧的古朴、传统节庆的隆重，都体现着客家人的文化坚守。</p>
+                            <p><em>（内容建设中，敬请期待...）</em></p>
+                        </div>
+                    `
+                }
+            }
+        };
+
         // === 图层切换逻辑 ===
         window.toggleLayer = function(type) {
             const btn = document.querySelector(`.layer-btn[data-type="${type}"]`);
-            
+
             if (currentLayer === type) {
+                // 取消选择，恢复默认内容
                 currentLayer = null;
                 btn.classList.remove('active');
                 clearLayerSeries();
+
+                // 恢复侧边栏为当前区域默认内容
+                if (activeZoneName && zoneContentData.default && zoneContentData.default[activeZoneName]) {
+                    const contentData = zoneContentData.default[activeZoneName];
+                    updateSidebarContent(contentData.title, contentData.content);
+                } else if (activeZoneName) {
+                    updateSidebarContent(activeZoneName + "文化", "这里是" + activeZoneName + "文化区域的详细介绍占位符...");
+                }
                 return;
             }
 
@@ -4388,8 +6941,19 @@
             btn.classList.add('active');
             currentLayer = type;
             closeLayerPopup();
-            
-            renderLayerSeries(type);
+
+            // 更新侧边栏内容为对应类型的内容
+            if (activeZoneName && zoneContentData[type] && zoneContentData[type][activeZoneName]) {
+                const contentData = zoneContentData[type][activeZoneName];
+                updateSidebarContent(contentData.title, contentData.content);
+            } else if (activeZoneName) {
+                // 如果该区域暂无内容，显示占位符
+                const typeNames = { food: '寻味美食', arch: '栖居建筑', folk: '非遗风俗' };
+                updateSidebarContent(
+                    activeZoneName + '·' + typeNames[type],
+                    `<p>${activeZoneName}的${typeNames[type]}内容正在整理中，敬请期待...</p>`
+                );
+            }
         };
 
         // 渲染图层标记（点击后弹窗）
