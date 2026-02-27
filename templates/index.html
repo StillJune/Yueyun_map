@@ -3505,16 +3505,36 @@
         }
 
         /* === 修复：引导模式下压低按钮层级 === */
-        /* 当 body 处于 guide-mode 时，按钮降级到遮罩(z-40)之下，且不可点击 */
-        body.guide-mode #tour-guide-btn {
-            z-index: 30 !important; 
+        body.guide-mode #tour-sidebar {
+            z-index: 30 !important;
             pointer-events: none !important;
-            filter: grayscale(0.8) brightness(0.6); /* 视觉上也压暗一点，配合遮罩 */
         }
         body.guide-mode #maritime-silk-road-btn {
             z-index: 30 !important;
             pointer-events: none !important;
-            filter: grayscale(0.8) brightness(0.6);
+            filter: grayscale(0.8) brightness(0.6) !important;
+        }
+
+        /* === 导览模式激活时，按钮图片渐隐渐显效果 === */
+        /* 当body有tour-mode类时（即展开导览列表项显示标记时），按钮图片渐隐，并禁用交互 */
+        body.tour-mode #craft-workshop-btn,
+        body.tour-mode #timeline-btn,
+        body.tour-mode #maritime-silk-road-btn {
+            pointer-events: none !important;
+        }
+
+        body.tour-mode #craft-workshop-btn img,
+        body.tour-mode #timeline-btn img,
+        body.tour-mode #maritime-silk-road-btn img {
+            opacity: 0 !important;
+            transition: opacity 0.5s ease-in-out !important;
+        }
+
+        /* 确保hover状态下也保持隐藏 */
+        body.tour-mode #craft-workshop-btn:hover img,
+        body.tour-mode #timeline-btn:hover img,
+        body.tour-mode #maritime-silk-road-btn:hover img {
+            opacity: 0 !important;
         }
 
         /* === 旅游导览侧边栏 (容器) === */
@@ -3817,6 +3837,22 @@
 
         @keyframes drawLine {
             to { stroke-dashoffset: 0; }
+        }
+
+        /* === 最高优先级：引导模式下强制压低导览按钮层级 === */
+        body.guide-mode #tour-guide-btn {
+            z-index: 30 !important;
+            pointer-events: none !important;
+            filter: grayscale(0.8) brightness(0.6) !important;
+            display: block !important;
+            transform: none !important;
+            background: rgba(253, 251, 247, 0.9) !important;
+            color: #5d4037 !important;
+        }
+        body.guide-mode #tour-guide-btn:hover {
+            background: rgba(253, 251, 247, 0.9) !important;
+            color: #5d4037 !important;
+            transform: none !important;
         }
 
     </style>
@@ -7631,16 +7667,18 @@
             const mapContainer = document.getElementById('map-container');
             // 如果传入了具体状态则使用，否则取反
             const newState = (typeof forceState !== 'undefined') ? forceState : !sidebar.classList.contains('open');
-            
+
             if (newState) {
                 sidebar.classList.add('open');
+                document.body.classList.add('tour-sidebar-open');
                 // ✨ 新增：打开侧边栏时，锁定地图，防止背景误触
                 mapContainer.classList.add('locked');
             } else {
                 sidebar.classList.remove('open');
+                document.body.classList.remove('tour-sidebar-open');
                 // ✨ 新增：关闭侧边栏时，解锁地图
                 mapContainer.classList.remove('locked');
-                
+
                 // 清除标记
                 clearTourMarkers();
 
